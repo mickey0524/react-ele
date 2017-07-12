@@ -1,4 +1,4 @@
 
 ## README
 
-  基于React全家桶的仿阿里手淘的web
+  基于React全家桶的仿饿了么的web
