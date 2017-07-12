@@ -52,9 +52,11 @@ const applyDeposit = (location, cb) => {
 
 const baihao = (location, cb) => {
     require.ensure([], require => {
-        cb(null, require('../Component/baihao').default)
+        cb(null, require('../Component/variety/variety').default)
     }, 'baihao')
 }
+
+
 // const baihao = require('../Component/baihao').default;
 // import baihao from '../Component/baihao';
 

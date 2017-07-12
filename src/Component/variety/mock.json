@@ -1,0 +1,36 @@
+module.exports = {
+  "varietyList": [
+    {
+      "name": "甜品饮品",
+      "imgUrl": "https://fuss10.elemecdn.com/2/35/696aa5cf9820adada9b11a3d14bf5jpeg.jpeg"
+    },
+    {
+      "name": "美食",
+      "imgUrl": "https://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg"
+    },
+    {
+      "name": "准时达",
+      "imgUrl": "https://fuss10.elemecdn.com/3/84/8e031bf7b3c036b4ec19edff16e46jpeg.jpeg"
+    },
+    {
+      "name": "新店特惠",
+      "imgUrl": "https://fuss10.elemecdn.com/a/fa/d41b04d520d445dc5de42dae9a384jpeg.jpeg"
+    },
+    {
+      "name": "鲜花蛋糕",
+      "imgUrl": "https://fuss10.elemecdn.com/8/83/171fd98b85dee3b3f4243b7459b48jpeg.jpeg"
+    },
+    {
+      "name": "包子粥店",
+      "imgUrl": "https://fuss10.elemecdn.com/2/17/244241b514affc0f12f4168cf6628jpeg.jpeg"
+    },
+    {
+      "name": "商超便利",
+      "imgUrl": "https://fuss10.elemecdn.com/0/da/f42235e6929a5cb0e7013115ce78djpeg.jpeg"
+    },
+    {
+      "name": "预定早餐",
+      "imgUrl": "https://fuss10.elemecdn.com/d/49/7757ff22e8ab28e7dfa5f7e2c2692jpeg.jpeg"
+    }
+  ]
+}
