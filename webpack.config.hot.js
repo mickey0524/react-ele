@@ -51,15 +51,15 @@ module.exports = {
             loader: 'file-loader?name=[name].[ext]',
             include: [APP_PATH]
         }, {
+            test: /\.jsx$/,
+            exclude: /^node_modules$/,
+            loaders: ['react-hot', 'jsx', 'babel'],
+            include: [APP_PATH]
+        }, {
             test: /\.(png|jpg|gif)$/,
             exclude: /^node_modules$/,
             loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]',
             //注意后面那个limit的参数，当你图片大小小于这个限制的时候，会自动启用base64编码图片
-            include: [APP_PATH]
-        }, {
-            test: /\.jsx$/,
-            exclude: /^node_modules$/,
-            loaders: ['react-hot', 'jsx', 'babel'],
             include: [APP_PATH]
         }]
     },

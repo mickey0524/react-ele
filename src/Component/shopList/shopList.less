@@ -1,3 +1,116 @@
 #shopList {
-  background-color: #FFFFFF;
+  .shop-item {
+    display: flex;
+    flex-direction: row;
+    padding: 0.7rem 0.4rem;
+    border-bottom: 0.025rem solid #f1f1f1;
+    .left {
+      flex: 1 0 auto;
+      display: flex;
+      .shop-img {
+        img {
+          width: 2.7rem;
+          height: 2.7rem;
+          margin-right: .4rem;
+        }
+      }
+      .shop-mes {
+        .shop-title {
+          color: #333333;
+          margin-bottom: .5rem;
+          span:first-of-type {
+            display: inline-block;
+            background-color: #FFD930;
+            font-size: .5rem;
+            border-radius: .1rem;
+            margin-right: .2rem;
+            padding: 0 0.1rem;
+            vertical-align: middle;
+          }
+          span:last-of-type {
+            display: inline-block;
+            font-size: .65rem;
+            font-weight: 700;
+            vertical-align: middle;
+          }
+        }
+        .shop-score {
+          position: relative;
+          .empty-stars {
+            background: url('../../images/color-stars_empty.png') no-repeat;
+            background-size: cover;
+            width: 2.8rem;
+            height: .4rem;
+            position: absolute;
+            top: 0.15rem;
+          }
+          .full-stars {
+            background: url('../../images/color-stars_full.png') no-repeat;
+            background-size: cover;
+            width: .56rem;
+            height: .4rem;
+            position: absolute;
+            top: 0.15rem;
+          }
+          span {
+            font-size: .4rem;
+          }
+          span:first-of-type {
+            color: #FF6000;
+            margin-left: 3rem;
+          }
+          span:last-of-type {
+            color: #666666;
+            transform: scale(0.9);
+          }
+          p {
+            margin-top: .3rem;
+            color: #666666;
+            font-size: .5rem;
+            transform: scale(0.9);
+          }
+        }
+      }
+    }
+    .right {
+      flex: 1 0 auto;
+      text-align: right;
+      .shop-service {
+        span {
+          font-size: .5rem;
+          color: #999999;
+          border: 0.025rem solid #F1F1F1;
+          padding: 0 0.04rem;
+          border-radius: 0.08rem;
+          display: inline-block;
+          transform: scale(0.8);
+        }
+        margin-bottom: .5rem;
+      }
+      .distribution {
+        display: inline-block;
+        transform: scale(0.8);
+        font-size: .4rem;
+        padding: 0.04rem 0.08rem 0;
+        border-radius: 0.08rem;
+        margin-right: -0.35rem;
+        .bird {
+          color: #FFFFFF;
+          background-color: #3190e8;
+          border: 0.025rem solid #3190e8;
+        }
+        .ontime {
+          margin-left: 0.08rem;
+          color: #3190e8;
+          border: 0.025rem solid #3190e8;
+        }
+      }
+      .shop-distance {
+        margin-top: 0.4rem;
+        color: #999;
+        transform: scale(0.9);
+        margin-right: -0.2rem;
+      }
+    }
+  }
 }
