@@ -52,7 +52,7 @@ const applyDeposit = (location, cb) => {
 
 const baihao = (location, cb) => {
     require.ensure([], require => {
-        cb(null, require('../Component/variety/variety').default)
+        cb(null, require('../Component/shopList/shopList').default)
     }, 'baihao')
 }
 

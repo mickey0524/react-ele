@@ -7,7 +7,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin'); //生成html
 var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'src'); //__dirname 中的src目录，以此类推
 var APP_FILE = path.resolve(APP_PATH, 'app'); //根目录文件app.jsx地址
-var BUILD_PATH = path.resolve(ROOT_PATH, 'react-alibaba/dist'); //发布文件所存放的目录/react-alibaba/dist/前面加/报错？
+var BUILD_PATH = path.resolve(ROOT_PATH, 'react-ele/dist'); //发布文件所存放的目录/react-alibaba/dist/前面加/报错？
 
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
         ]
     },
     output: {
-        publicPath: '/react-alibaba/dist/', //编译好的文件，在服务器的路径,域名会自动添加到前面
+        publicPath: '/react-ele/dist/', //编译好的文件，在服务器的路径,域名会自动添加到前面
         path: BUILD_PATH, //编译到当前目录
         filename: '[name].js', //编译后的文件名字
         chunkFilename: '[name].[chunkhash:5].min.js',

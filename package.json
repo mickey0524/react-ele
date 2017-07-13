@@ -1,5 +1,5 @@
 {
-  "name": "react-alibaba",
+  "name": "react-ele",
   "version": "1.0.1",
   "description": "react-demo",
   "main": "server.js",
@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "github",
-    "url": "https://github.com/mickey0524/react-alibaba"
+    "url": "https://github.com/mickey0524/react-ele"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/mickey0524/react-alibaba#readme",
+  "homepage": "https://github.com/mickey0524/react-ele#readme",
   "dependencies": {
     "github-markdown-css": "^2.4.0",
     "immutable": "^3.8.1",
