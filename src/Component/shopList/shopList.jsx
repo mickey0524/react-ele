@@ -1,11 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import pureRender from 'pure-render-decorator';
-import { connect } from 'react-redux';
-import { is, fromJS } from 'immutable';
-import template from '../common/template';     // 项目其他组件连接redux的桥梁
 import mockData from './mock.json';            // mock数据，目前不打算写服务端，只是为了熟悉react
 import './shopList.less';
-// import img from '../../images/demo.png';
 
 /**
  * index页面种类下面商家的滚动列表
@@ -41,7 +36,7 @@ class Main extends Component {
                       </div>
                       <div className="shop-score">
                         <div className="empty-stars"></div>
-                        <div className="full-stars"></div>
+                        <div className="full-stars" style={{ width: item.starNum * 0.56 + 'rem' }}></div>
                         <span className="star-num">{ item.starNum }</span>
                         <span className="month-sale">{ item.monthlySales }单</span>
                         <p>¥{ item.initMoney }起送 / 配送费约¥{ item.deliveryFee }</p>
@@ -72,10 +67,8 @@ class Main extends Component {
   }
 
   componentDidMount() {
-   // console.log('componentDidMount');
+   
   }
 }
 
-export default template({
-  component: Main
-});
+export default Main;

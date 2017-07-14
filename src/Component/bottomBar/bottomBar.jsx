@@ -1,8 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import pureRender from 'pure-render-decorator';
-import { connect } from 'react-redux';
-import { is, fromJS } from 'immutable';
-import template from '../common/template';     // 项目其他组件连接redux的桥梁
 import './bottomBar.less';
 
 class Main extends Component {
@@ -67,6 +63,4 @@ class Main extends Component {
   }
 }
 
-export default template({
-  component: Main
-})
+export default Main;
