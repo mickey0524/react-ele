@@ -5,8 +5,8 @@
     padding: 0.7rem 0.4rem;
     border-bottom: 0.025rem solid #f1f1f1;
     .left {
-      flex: 1 0 auto;
       display: flex;
+      flex: 1 0 auto;
       .shop-img {
         img {
           width: 2.7rem;
@@ -18,7 +18,7 @@
         .shop-title {
           color: #333333;
           margin-bottom: .5rem;
-          span:first-of-type {
+          .brand {
             display: inline-block;
             background-color: #FFD930;
             font-size: .5rem;
@@ -27,7 +27,7 @@
             padding: 0 0.1rem;
             vertical-align: middle;
           }
-          span:last-of-type {
+          .shop-name {
             display: inline-block;
             font-size: .65rem;
             font-weight: 700;
@@ -54,12 +54,14 @@
           }
           span {
             font-size: .4rem;
+            display: inline-block;
           }
-          span:first-of-type {
+          .star-num {
             color: #FF6000;
             margin-left: 3rem;
+            margin-right: .2rem;
           }
-          span:last-of-type {
+          .month-sale {
             color: #666666;
             transform: scale(0.9);
           }
@@ -73,8 +75,10 @@
       }
     }
     .right {
-      flex: 1 0 auto;
       text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       .shop-service {
         span {
           font-size: .5rem;
@@ -93,7 +97,7 @@
         font-size: .4rem;
         padding: 0.04rem 0.08rem 0;
         border-radius: 0.08rem;
-        margin-right: -0.35rem;
+        margin-right: -0.6rem;
         .bird {
           color: #FFFFFF;
           background-color: #3190e8;

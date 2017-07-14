@@ -92,7 +92,7 @@ module.exports = {
     },
     {
       "imgUrl": "http://images.cangdu.org/15d30a4acbb2676.png",
-      "isBrand": true,
+      "isBrand": false,
       "shopName": "白师傅",
       "starNum": 4.4,
       "monthlySales": 413,

@@ -35,15 +35,15 @@ class Main extends Component {
                     <div className="shop-mes">
                       <div className="shop-title">
                         {
-                          item.isBrand && <span>品牌</span>
+                          item.isBrand && <span className="brand">品牌</span>
                         }
-                        <span>{ item.shopName }</span>
+                        <span className="shop-name">{ item.shopName }</span>
                       </div>
                       <div className="shop-score">
                         <div className="empty-stars"></div>
                         <div className="full-stars"></div>
-                        <span>{ item.starNum }</span>
-                        <span>月销{ item.monthlySales }单</span>
+                        <span className="star-num">{ item.starNum }</span>
+                        <span className="month-sale">{ item.monthlySales }单</span>
                         <p>¥{ item.initMoney }起送 / 配送费约¥{ item.deliveryFee }</p>
                       </div>
                     </div>
