@@ -13,7 +13,7 @@ export const GET_DATA_START = 'GET_DATA_START'
 export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS'
 export const TEST_DISPATCH = 'TEST_DISPATCH'
 
-export const BAIHAO = 'BAIHAO'
+export const CHANGE_BOTTOM_BAR = 'CHANGE_BOTTOM_BAR'
 
 
 
@@ -139,9 +139,9 @@ export const testAction = (data) => {
 
 
 
-export const setBaihao = (age) => {
+export const changeBottomBar = (bottomChoose) => {
     return {
-        type: BAIHAO,
-        age
+        type: CHANGE_BOTTOM_BAR,
+        bottomChoose
     }
 }

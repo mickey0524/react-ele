@@ -3,7 +3,7 @@ import {SET_STATE, REQUEST_POSTS, RECEIVE_POSTS} from '../Action/Index'
 import {RECORD_STATE, SAVE_PRODUCT_LIST, NEW_PRODUCT_DATA} from '../Action/Index'
 import {DELETE_ITEM} from '../Action/Index'
 import {GET_DATA_START , GET_DATA_SUCCESS, TEST_DISPATCH} from '../Action/Index'
-import {BAIHAO} from '../Action/Index'
+import {CHANGE_BOTTOM_BAR} from '../Action/Index'
 
 
 
@@ -71,12 +71,11 @@ export const saleRecord = (state = Immutable.fromJS({}) , action = {}) => {
     }
 }
 
-export const baihao = (state = {}, action = {}) => {
+export const bottomChoose = (state = 'takeaway', action = {}) => {
     switch(action.type) {
-        case BAIHAO:
-            var newState = Object.assign({}, state, { age: action.age });
-            state.age = action.age;
-            return newState;
+        case CHANGE_BOTTOM_BAR:
+            //var newState = Object.assign({}, state, { bottomChoose: action.bottomChoose });
+            return action.bottomChoose;
         default:
             return state;
     }
