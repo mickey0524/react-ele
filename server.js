@@ -24,4 +24,5 @@ server.app.get('*', function(req, res) {
 });
 server.listen(8088, function() {
 	console.log('正常打开8088端口')
+
 });
