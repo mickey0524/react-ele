@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import template from '../common/template';
 import mockData from './mock.json';            // mock数据，目前不打算写服务端，只是为了熟悉react
 import './variety.less';
 
@@ -37,4 +38,7 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default template({
+  id: 'variety',
+  component: Main
+});

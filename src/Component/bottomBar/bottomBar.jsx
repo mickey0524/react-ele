@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import template from '../common/template';
 import './bottomBar.less';
 
 class Main extends Component {
@@ -63,4 +64,7 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default template({
+  id: 'bottomBar',
+  component: Main
+});

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import template from '../common/template';
 import './topBar.less';
 
 class Main extends Component {
@@ -26,5 +27,8 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default template({
+  id: 'topBar',
+  component: Main
+});
 
