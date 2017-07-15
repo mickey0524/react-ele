@@ -19,8 +19,8 @@ const Main = mySeting => {
     class Index extends Component {
         static defaultProps = { setting }
 
-        constructor(props,context) {
-            super(props,context);
+        constructor(props, context) {
+            super(props, context);
         }
 
         render() {
