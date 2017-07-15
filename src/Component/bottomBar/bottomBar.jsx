@@ -1,18 +1,20 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../common/template';
+import { browserHistory, hashHistory } from 'react-router';
 import './bottomBar.less';
 
 class Main extends Component {
 
-  constructor(props) {
-    super(props);
-
+  constructor(props, context) {
+    super(props, context);
     this.handleClick = (ev) => {
       let target = ev.target;
       if (target.className.indexOf('-') !== -1) {
         target = target.parentNode;
       }
       this.props.changeBottomBar(target.className);
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/' + target.className);
     }
   }
 

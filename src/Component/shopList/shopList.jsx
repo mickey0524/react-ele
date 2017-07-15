@@ -11,8 +11,8 @@ class Main extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      shopList: mockData.shopList
+    if (this.props.shopList.length === 0) {
+      this.props.changeShopList(mockData.shopList);
     }
   }
 
@@ -21,7 +21,7 @@ class Main extends Component {
       <div id="shopList">
         <ul>
           {
-            this.state.shopList.map((item, index) => {
+            this.props.shopList.map((item, index) => {
               return (
                 <div className="shop-item" key={index}>
                   <div className="left">

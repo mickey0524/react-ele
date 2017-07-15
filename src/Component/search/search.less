@@ -1,0 +1,108 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #F5F5F5;
+}
+
+#search {
+  .search-container {
+    background-color: #FFFFFF;
+    margin-top: 1.95rem;
+    margin-bottom: 2.2rem;
+    .search-input {
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      input {
+        flex: 4;
+        height: 1.5rem;
+        border: 0.025rem solid #e4e4e4;
+        font-size: 0.65rem;
+        color: #333;
+        border-radius: 0.125rem;
+        background-color: #f2f2f2;
+        font-weight: bold;
+        padding: 0 0.25rem;
+      }
+      button {
+        flex: 1;
+        border: 0.025rem solid #3190e8;
+        margin-left: .2rem;
+        font-size: 0.65rem;
+        color: #fff;
+        border-radius: 0.125rem;
+        background-color: #3190e8;
+        font-weight: bold;
+        padding: 0 0.25rem;
+      }
+      span {
+        position: absolute;
+        color: #3190e8;
+        font-size: .8rem;
+        right: 4.5rem;
+        top: .75rem;
+      }
+    }
+    .no-result {
+      background-color: #FFFFFF;
+      text-align: center;
+      color: #333333;
+      font-size: 0.65rem;
+      line-height: 1.75rem;
+      // margin-top: 0.125rem;
+      border-top: 0.1rem solid #F5F5F5;
+    }
+    .search-history {
+      p {
+        font-size: 0.6rem;
+        line-height: 2rem;
+        text-indent: 0.5rem;
+        font-weight: bold;
+        color: #666;
+        background-color: #F5F5F5;
+      }
+      ul {
+        li {
+          overflow: hidden;
+          border-bottom: 0.025rem solid #e4e4e4;
+          font: 0.7rem/2rem "Microsoft YaHei";
+          padding: 0 0.3rem;
+          color: #333;
+          span:first-of-type {
+            float: left;
+            margin-left: .2rem;
+          }
+          span:last-of-type {
+            float: right;
+            margin-right: .2rem;
+            color: #999999;
+            font-weight: bold;
+          }
+        }
+      }
+      button {
+        line-height: 2rem;
+        width: 100%;
+        text-align: center;
+        display: block;
+        color: #3190e8;
+        font-size: 0.7rem;
+        cursor: pointer;
+      }
+    }
+    .suitable-shop {
+      >p {
+        font-size: 0.6rem;
+        line-height: 2rem;
+        text-indent: 0.5rem;
+        font-weight: bold;
+        color: #666;
+        background-color: #F5F5F5;
+      }
+    }
+  }
+}

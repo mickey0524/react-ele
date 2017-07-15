@@ -13,19 +13,20 @@ class Roots extends Component {
 
 const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
 
-// const topBar = (location, cb) => {
-//     require.ensure([], require => {
-//         cb(null, require('../Component/topBar/topBar').default)
-//     },'topBar')
-// }
+const search = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../Component/search/search').default)
+    },'search')
+}
 
 const RouteConfig = (
     <Router history={history}>
         <Route path="/" component={Roots}>
             <IndexRoute component={takeaway} />//首页
-            <Route path="takeaway" getComponent={takeaway} />
-            <Redirect from='*' to='/' />
+            <Route path="takeaway" component={takeaway} />
+            <Route path="search" getComponent={search} />
         </Route>
+        <Redirect from='*' to='/' />
     </Router>
 );
 

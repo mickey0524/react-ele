@@ -1,4 +1,4 @@
-import {CHANGE_BOTTOM_BAR, CHANGE_TOP_BAR} from '../Action/Index'
+import {CHANGE_BOTTOM_BAR, CHANGE_TOP_BAR, CHANGE_SHOP_LIST} from '../Action/Index'
 
 
 export const bottomChoose = (state = 'takeaway', action = {}) => {
@@ -18,6 +18,15 @@ export const topBar = (state = initTopBar, action = {}) => {
         case CHANGE_TOP_BAR:
             var newState = Object.assign({}, state, action.topBar);
             return newState;
+        default:
+            return state;
+    }
+}
+
+export const shopList = (state = [], action = {}) => {
+    switch(action.type) {
+        case CHANGE_SHOP_LIST:
+            return action.shopList;
         default:
             return state;
     }
