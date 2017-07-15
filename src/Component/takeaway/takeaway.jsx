@@ -4,6 +4,7 @@ import TopBar from '../topBar/topBar';
 import Variety from '../variety/variety';
 import ShopList from '../shopList/shopList';
 import BottomBar from '../bottomBar/bottomBar';
+import Interval from '../interval/interval';
 import './takeaway.less';
 
 class Main extends Component {
@@ -17,6 +18,7 @@ class Main extends Component {
       <div id="takeaway">
         <TopBar></TopBar>
         <Variety></Variety>
+        <Interval></Interval>
         <ShopList></ShopList>
         <BottomBar></BottomBar>
       </div>
