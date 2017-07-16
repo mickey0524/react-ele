@@ -19,12 +19,19 @@ const search = (location, cb) => {
     },'search')
 }
 
+const order = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../Component/order/order').default)
+    }, 'order')
+}
+
 const RouteConfig = (
     <Router history={history}>
         <Route path="/" component={Roots}>
             <IndexRoute component={takeaway} />//首页
             <Route path="takeaway" component={takeaway} />
             <Route path="search" getComponent={search} />
+            <Route path="order" getComponent={order} />
         </Route>
         <Redirect from='*' to='/' />
     </Router>

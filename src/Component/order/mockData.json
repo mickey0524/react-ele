@@ -1,0 +1,32 @@
+module.exports = {
+  "orderList": [
+    {
+      "shopImg": "http://images.cangdu.org/15d104c884b2314.jpg",
+      "shopName": "my shop",
+      "orderStatus": "等待支付",
+      "goods": [ "aaa", "bbb" ],
+      "orderMoney": "754.00",
+      "orderTime": "2017-07-16 20:00",
+      "minuteLeft": "4",
+      "secondLeft": "47"
+    },
+    {
+      "shopImg": "http://images.cangdu.org/15cee7825042013.jpg",
+      "shopName": "肯德基",
+      "orderStatus": "等待支付",
+      "goods": [ "鸡翅" ],
+      "orderMoney": "734.00",
+      "orderTime": "2017-07-16 20:00",
+      "minuteLeft": "1",
+      "secondLeft": "51"
+    },
+    {
+      "shopImg": "http://images.cangdu.org/aaa.jpeg",
+      "shopName": "麦当劳",
+      "orderStatus": "支付超时",
+      "goods": [ "汉堡包" ],
+      "orderMoney": "731.00",
+      "orderTime": "2017-07-16 20:00"
+    }
+  ]
+}
