@@ -44,8 +44,10 @@ class Main extends Component {
 
   componentDidMount() {
     let path = this.props.route.path;
-    this.props.changeBottomBar(path);
-    this.props.changeTopBar(changeTopBarStatus(path));
+    if (path) {
+      this.props.changeBottomBar(path);
+      this.props.changeTopBar(changeTopBarStatus(path));
+    }
   }
 }
 
