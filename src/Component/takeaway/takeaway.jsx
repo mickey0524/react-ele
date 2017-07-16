@@ -19,7 +19,7 @@ class Main extends Component {
         <TopBar route={this.props.route}></TopBar>
         <Variety></Variety>
         <Interval></Interval>
-        <ShopList></ShopList>
+        <ShopList route={this.props.route}></ShopList>
         <BottomBar></BottomBar>
       </div>
     );

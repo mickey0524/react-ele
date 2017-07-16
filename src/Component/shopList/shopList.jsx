@@ -11,7 +11,7 @@ class Main extends Component {
 
   constructor(props) {
     super(props);
-    if (this.props.shopList.length === 0) {
+    if (this.props.route && this.props.route.path === 'takeaway') {
       this.props.changeShopList(mockData.shopList);
     }
   }
