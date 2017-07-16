@@ -9,11 +9,9 @@ class Main extends Component {
     super(props, context);
     this.handleClick = (ev) => {
       let target = ev.target;
-      // console.log(target.);
       if (target.className.indexOf('-') !== -1 || target.nodeName === 'P') {
         target = target.parentNode;
       }
-      this.props.changeBottomBar(target.className);
       const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
       history.push('/' + target.className);
     }

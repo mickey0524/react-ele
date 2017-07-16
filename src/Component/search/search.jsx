@@ -117,7 +117,7 @@ class Main extends Component {
   render() {
     return (
       <div id="search">
-        <TopBar></TopBar>
+        <TopBar route={this.props.route}></TopBar>
         <div className="search-container">
           <div className="search-input">
             <input type="text" placeholder="请输入商家或美食名称" onChange={this.handleInputChange} ref="searchContent" autoFocus />

@@ -16,7 +16,7 @@ class Main extends Component {
   render() {
     return (
       <div id="takeaway">
-        <TopBar></TopBar>
+        <TopBar route={this.props.route}></TopBar>
         <Variety></Variety>
         <Interval></Interval>
         <ShopList></ShopList>
