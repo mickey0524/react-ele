@@ -4,18 +4,23 @@
   height: 2.2rem;
   display: flex;
   flex-direction: row;
+  align-items: center;
   position: fixed;
   bottom: 0;
   background-color: #FFFFFF;
-  align-items: center;
   box-shadow: 0 -0.02667rem 0.05333rem rgba(0, 0, 0, 0.1);
   div {
+    height: 100%;
     cursor: pointer;
     flex: 1;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     p {
       font-size: .45rem;
       color: #666666;
+      margin-top: .2rem;
     }
     span {
       display: inline-block;

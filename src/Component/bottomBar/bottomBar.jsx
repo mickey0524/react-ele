@@ -9,7 +9,8 @@ class Main extends Component {
     super(props, context);
     this.handleClick = (ev) => {
       let target = ev.target;
-      if (target.className.indexOf('-') !== -1) {
+      // console.log(target.);
+      if (target.className.indexOf('-') !== -1 || target.nodeName === 'P') {
         target = target.parentNode;
       }
       this.props.changeBottomBar(target.className);
