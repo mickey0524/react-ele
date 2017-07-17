@@ -3,6 +3,7 @@ import template from '../common/template';
 import TopBar from '../topBar/topBar';
 import BottomBar from '../bottomBar/bottomBar';
 import mockData from './mockData.json';
+import { dateToStamp } from '../../Utils/dateForm';
 import './order.less';
 
 class Main extends Component {
@@ -94,6 +95,22 @@ class Main extends Component {
     );
   }
 
+  componentWillMount() {
+    let newOrderList = this.state.orderList;
+    newOrderList.forEach((item) => {
+      let timeDiff = parseInt(dateToStamp(item.orderTime), 10) + (15 * 60 * 1000) - Date.now();
+      if (timeDiff < 0) {
+        item.orderStatus = '支付超时';
+      }
+      else {
+        timeDiff /= 1000;
+        item.minuteLeft = parseInt(timeDiff / 60, 10);
+        item.secondLeft = parseInt(timeDiff % 60, 10);
+      }
+    })
+    this.setState({ orderList: newOrderList });
+  }
+
   componentDidMount() {
     this.timer = setInterval(() => {
       this.changeOrderTime();
@@ -102,7 +119,6 @@ class Main extends Component {
 
   componentWillUnmount() {
     clearInterval(this.timer);
-    this.timer = '';
   }
 }
 
