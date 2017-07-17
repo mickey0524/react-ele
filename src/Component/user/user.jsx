@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import template from '../common/template';
 import TopBar from '../topBar/topBar';
 import BottomBar from '../bottomBar/bottomBar';
+import Interval from '../interval/interval';
 import mockData from './mockData.json';
 import './user.less';
 
@@ -49,11 +50,13 @@ class Main extends Component {
               <p>我的积分</p>
             </div>
           </div>
+          <Interval></Interval>
           <div className="ele-market">
             <div className="user-order"><span></span><span>我的订单</span><span>></span></div>
             <div className="integral-market"><span></span><span>积分商城</span><span>></span></div>
             <div className="ele-member"><span></span><span>饿了么会员卡</span><span>></span></div>
           </div>
+          <Interval></Interval>
           <div className="ele-service">
             <div className="service-center"><span></span><span>服务中心</span><span>></span></div>
             <div className="download-ele"><span></span><span>下载饿了么APP</span><span>></span></div>
