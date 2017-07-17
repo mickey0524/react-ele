@@ -6,11 +6,39 @@ import mockData from './mockData.json';
 import './order.less';
 
 class Main extends Component {
-
+  static timer = '';
   constructor(props) {
     super(props);
     this.state = {
       orderList: mockData.orderList
+    }
+    this.changeOrderTime = () => {
+      let newOrderList = this.state.orderList;
+      newOrderList.forEach((item) => {
+        if (item.orderStatus === '等待支付') {
+          let min = parseInt(item.minuteLeft, 10);
+          let sec = parseInt(item.secondLeft, 10) - 1;
+          if (sec < 0) {
+            min += sec;
+            sec = 59;
+          }
+          if (min < 0) {
+            item.orderStatus = '支付超时';
+          }
+          else {
+            min = this.addZero(min);
+            sec = this.addZero(sec);
+            item.minuteLeft = min;
+            item.secondLeft = sec;
+          }
+        }
+      });
+      this.setState({
+        orderList: newOrderList
+      })
+    }
+    this.addZero = (num) => {
+      return (num < 10) ? '0' + num : num;
     }
   }
 
@@ -64,6 +92,17 @@ class Main extends Component {
         <BottomBar></BottomBar>
       </div>
     );
+  }
+
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      this.changeOrderTime();
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    this.timer = '';
   }
 }
 
