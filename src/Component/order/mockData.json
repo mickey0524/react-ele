@@ -6,7 +6,7 @@ module.exports = {
       "orderStatus": "等待支付",
       "goods": [ "aaa", "bbb" ],
       "orderMoney": "754.00",
-      "orderTime": "2017-07-17 18:10:00",
+      "orderTime": "2017-07-17 18:30:00",
       "minuteLeft": "04",
       "secondLeft": "47"
     },

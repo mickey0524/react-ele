@@ -104,8 +104,8 @@ class Main extends Component {
       }
       else {
         timeDiff /= 1000;
-        item.minuteLeft = parseInt(timeDiff / 60, 10);
-        item.secondLeft = parseInt(timeDiff % 60, 10);
+        item.minuteLeft = this.addZero(parseInt(timeDiff / 60, 10));
+        item.secondLeft = this.addZero(parseInt(timeDiff % 60, 10));
       }
     })
     this.setState({ orderList: newOrderList });
