@@ -1,0 +1,8 @@
+module.exports = {
+  "userName": "baihao0524",
+  "userAvatar": "http://images.cangdu.org/aaa.jpeg",
+  "phoneNum": "",
+  "balance": "0.00",
+  "offer": "3",
+  "integral": "0"
+}
