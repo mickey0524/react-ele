@@ -1,8 +1,23 @@
 #takeaway {
-  #varietyList {
-    margin-top: 1.95rem;
+  ::-webkit-scrollbar {
+    width: 0;
   }
-  #shopList {
-    margin-bottom: 2.2rem;
+  .takeaway-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1.95rem;
+    overflow: scroll;
+    height: 25rem;
+    .top-icon {
+      position: fixed;
+      right: 1rem;
+      bottom: 3rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: 0 0 no-repeat;
+      background-size: 100%;
+      background-image: url("../../images/top.png");
+    }
   }
 }

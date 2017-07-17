@@ -53,8 +53,8 @@ class Main extends Component {
             {
               this.state.orderList.map((item, index) => {
                 return (
-                  <li>
-                    <div className="order-item" key={index}>
+                  <li key={index}>
+                    <div className="order-item">
                       <div className="order-img">
                         <img src={item.shopImg} />
                       </div>
