@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../common/template';
+import IntersectionObserver from '../../Utils/intersection-observer.js';
 import mockData from './mock.json';            // mock数据，目前不打算写服务端，只是为了熟悉react
+import placeholder from '../../images/placeholder-img.png';
 import './shopList.less';
 
 /**
@@ -10,10 +12,38 @@ import './shopList.less';
 class Main extends Component {
 
   constructor(props) {
+
     super(props);
     if (this.props.route && this.props.route.path === 'takeaway') {
-      this.props.changeShopList(mockData.shopList);
+      this.state = {
+        shopList: mockData.shopList
+      }
     }
+    else {
+      this.state = {
+        shopList: this.props.shopList
+      }
+    }
+  }
+
+  componentDidMount() {
+    let queryLazyLoad = () => {
+      return Array.from(document.querySelectorAll('.lazy-load'));
+    }
+    let observer = new IntersectionObserver(
+      function(changes) {
+        changes.forEach(function(change) {
+          if (change.intersectionRatio != 0) {
+            var img = change.target;
+            img.src = img.dataset.img;
+            observer.unobserve(img);
+          }
+        });
+      }
+    );
+    queryLazyLoad().forEach((item) => {
+      observer.observe(item);
+    });
   }
 
   render () {
@@ -21,12 +51,12 @@ class Main extends Component {
       <div id="shopList">
         <ul>
           {
-            this.props.shopList.map((item, index) => {
+            this.state.shopList.map((item, index) => {
               return (
-                <div className="shop-item" key={index}>
+                <li className="shop-item" key={index}>
                   <div className="left">
                     <div className="shop-img">
-                      <img src={ item.imgUrl } />
+                      <img src={placeholder} data-img={item.imgUrl} className="lazy-load" />
                     </div>
                     <div className="shop-mes">
                       <div className="shop-title">
@@ -58,7 +88,7 @@ class Main extends Component {
                       { item.distance }公里 / <span>{ item.needTime }</span>
                     </div>
                   </div>
-                </div>
+                </li>
               )
             })
           }
