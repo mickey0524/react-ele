@@ -26,10 +26,10 @@ class Main extends Component {
     }
 
     this.showActivity = (index, ev) => {
-      let target = ev.target;
-      if (target.nodeName == 'SPAN') {
-        target = target.parentNode;
-      }
+      let target = ev.currentTarget;
+      // if (target.nodeName == 'SPAN') {
+      //   target = target.parentNode;
+      // }
       target.classList.toggle('rotate');
       let newList = this.state.shopList;
       newList[index].showMoreActivity = !newList[index].showMoreActivity;
