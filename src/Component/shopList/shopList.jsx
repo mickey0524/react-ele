@@ -14,7 +14,7 @@ class Main extends Component {
   constructor(props) {
 
     super(props);
-    if (this.props.route && this.props.route.path === 'takeaway') {
+    if (!this.props.route.path || this.props.route.path === 'takeaway') {
       this.state = {
         shopList: mockData.shopList
       }
