@@ -58,6 +58,12 @@ class Main extends Component {
                     <div className="shop-img">
                       <img src={placeholder} data-img={item.imgUrl} className="lazy-load" />
                     </div>
+                    {
+                      item.isNewShop &&
+                      <div className="new-shop">
+                        <span>新店</span>
+                      </div>
+                    }
                     <div className="shop-mes">
                       <div className="shop-title">
                         {

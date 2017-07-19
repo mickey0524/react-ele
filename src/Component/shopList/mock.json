@@ -13,7 +13,8 @@ module.exports = {
       "isBird": true,
       "isOntime": true,
       "isInsurance": true,
-      "needtip": true
+      "needtip": true,
+      "isNewShop": true
     },
     {
       "imgUrl": "http://images.cangdu.org/15c58db523471.jpg",
@@ -43,7 +44,8 @@ module.exports = {
       "isBird": true,
       "isOntime": true,
       "isInsurance": true,
-      "needtip": true
+      "needtip": true,
+      "isNewShop": true
     },
     {
       "imgUrl": "http://images.cangdu.org/15cee7825042013.jpg",
