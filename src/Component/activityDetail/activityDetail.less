@@ -1,0 +1,95 @@
+html, body {
+  height: 100%;
+}
+body {
+  background: #262626;
+}
+#activityDetail {
+  color: #FFFFFF;
+  padding: 1.6rem 1.2rem 1.2rem;
+  .shop-name {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+  .shop-star {
+    position: relative;
+    margin-bottom: 2rem;
+    margin-top: .4rem;
+    div {
+      position: absolute;
+      background: 0 0 no-repeat;
+      background-size: cover;
+      width: 5.6rem;
+      height: .8rem;
+      left: 30%;
+    }
+    .empty-star {
+      background-image: url("../../images/color-stars_empty.png");
+    }
+    .full-star {
+      width: 0rem;
+      background-image: url("../../images/color-stars_full.png");
+    }
+  }
+  .discount-mes {
+    .discount-title {
+      text-align: center;
+      margin-bottom: .8rem;
+      span {
+        border: 0.05rem solid #555555;
+        padding: .2rem .4rem;
+        border-radius: .666667rem;
+      }
+    }
+    ul {
+      li {
+        font-size: .266667rem;
+        transform: scale(0.9);
+        margin-left: -.75rem;
+        span {
+          margin-right: .2rem;
+          border-radius: .2rem;
+          text-align: center;
+          padding: 0 .1rem;
+        }
+        .new {
+          background-color: rgb(112, 188, 70);
+        }
+        .subtraction {
+          background-color: rgb(240, 115, 115);
+        }
+        .special {
+          background-color: rgb(241, 136, 79);
+        }
+        .discount {
+          background-color: rgb(240, 115, 115);
+        }
+      }
+    }
+  }
+  .shop-slogan {
+    margin-top: 1rem;
+    .slogan-title {
+      text-align: center;
+      margin-bottom: .8rem;
+      span {
+        border: 0.05rem solid #555555;
+        padding: .2rem .4rem;
+        border-radius: .666667rem;
+      }
+    }
+  }
+  .back-icon {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    span {
+      display: inline-block;
+      border: 0.05rem solid #555555;
+      padding: 0.62rem .8rem;
+      border-radius: 70%;
+    }
+  }
+}

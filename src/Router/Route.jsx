@@ -31,10 +31,10 @@ const user = (location, cb) => {
   }, 'user')
 }
 
-const shopBanner = (location, cb) => {
+const ac = (location, cb) => {
   require.ensure([], require => {
-    cb(null, require('../Component/shopBanner/shopBanner').default)
-  }, 'shopBanner')
+    cb(null, require('../Component/activityDetail/activityDetail').default)
+  }, 'ac')
 }
 
 const RouteConfig = (
@@ -45,7 +45,7 @@ const RouteConfig = (
       <Route path="search" getComponent={search} />
       <Route path="order" getComponent={order} />
       <Route path="user" getComponent={user} />
-      <Route path="shopBanner" getComponent={shopBanner} />
+      <Route path="ac" getComponent={ac} />
     </Route>
     <Redirect from='*' to='/' />
   </Router>
