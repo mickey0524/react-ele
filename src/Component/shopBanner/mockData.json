@@ -1,0 +1,8 @@
+module.exports = {
+  "shopImg": "https://fuss10.elemecdn.com/d/ab/865960541f74551858f8ed9d3685bjpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
+  "shopName": "港岛记（北京知春路店）",
+  "shopService": "蜂鸟专送／34分钟送达／配送费¥5",
+  "announcement": "公告：新店开张！感谢惠顾！如有特殊需求，请备注或打电话告诉我们，谢谢大家",
+  "activityNum": "10",
+  "slogan": "新用户下单立减17.0元(不与其他活动分享)"
+}

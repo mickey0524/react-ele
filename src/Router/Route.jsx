@@ -31,6 +31,12 @@ const user = (location, cb) => {
   }, 'user')
 }
 
+const shopBanner = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/shopBanner/shopBanner').default)
+  }, 'shopBanner')
+}
+
 const RouteConfig = (
   <Router history={history}>
     <Route path="/" component={Roots}>
@@ -39,6 +45,7 @@ const RouteConfig = (
       <Route path="search" getComponent={search} />
       <Route path="order" getComponent={order} />
       <Route path="user" getComponent={user} />
+      <Route path="shopBanner" getComponent={shopBanner} />
     </Route>
     <Redirect from='*' to='/' />
   </Router>
