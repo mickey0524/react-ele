@@ -1,139 +1,205 @@
 #shopList {
   background-color: #FFFFFF;
   .shop-item {
-    display: flex;
-    flex-direction: row;
     padding: 0.7rem 0.4rem;
     border-bottom: 0.025rem solid #f1f1f1;
     position: relative;
-    .left {
+    .top-item {
       display: flex;
-      flex: 1 0 auto;
-      .shop-img {
-        img {
-          width: 2.7rem;
-          height: 2.7rem;
-          margin-right: .4rem;
+      flex-direction: row;
+      //margin-bottom: .2rem;
+      .left {
+        display: flex;
+        flex: 1 0 auto;
+        .shop-img {
+          img {
+            width: 2.7rem;
+            height: 2.7rem;
+            margin-right: .4rem;
+          }
         }
-      }
-      .new-shop {
-        width: 1.5rem;
-        height: 1.5rem;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background-image: linear-gradient(135deg, #26ce61, #26ce61 50%,transparent 0);
-        background-image: -webkit-linear-gradient(315deg,#26ce61,#26ce61 50%,transparent 0);
-        span {
+        .new-shop {
+          width: 1.5rem;
+          height: 1.5rem;
           position: absolute;
-          top: 0.1rem;
-          display: block;
-          color: #fff;
-          font-size: .24rem;
-          -webkit-transform: rotate(-45deg) scale(0.8);
-          transform: rotate(-45deg) scale(0.8);
+          left: 0;
+          top: 0;
+          background-image: linear-gradient(135deg, #26ce61, #26ce61 50%,transparent 0);
+          background-image: -webkit-linear-gradient(315deg,#26ce61,#26ce61 50%,transparent 0);
+          span {
+            position: absolute;
+            top: 0.1rem;
+            display: block;
+            color: #fff;
+            font-size: .24rem;
+            -webkit-transform: rotate(-45deg) scale(0.8);
+            transform: rotate(-45deg) scale(0.8);
+          }
+        }
+        .shop-mes {
+          .shop-title {
+            color: #333333;
+            margin-bottom: .5rem;
+            .brand {
+              display: inline-block;
+              background-color: #FFD930;
+              font-size: .5rem;
+              border-radius: .1rem;
+              margin-right: .2rem;
+              padding: 0 0.1rem;
+              vertical-align: middle;
+            }
+            .shop-name {
+              display: inline-block;
+              font-size: .65rem;
+              font-weight: 700;
+              vertical-align: middle;
+            }
+          }
+          .shop-score {
+            position: relative;
+            .empty-stars {
+              background: url('../../images/color-stars_empty.png') no-repeat;
+              background-size: cover;
+              width: 2.8rem;
+              height: .4rem;
+              position: absolute;
+              top: 0.15rem;
+            }
+            .full-stars {
+              background: url('../../images/color-stars_full.png') no-repeat;
+              background-size: cover;
+              width: 0rem;
+              height: .4rem;
+              position: absolute;
+              top: 0.15rem;
+            }
+            span {
+              font-size: .4rem;
+              display: inline-block;
+            }
+            .star-num {
+              color: #FF6000;
+              margin-left: 3rem;
+              margin-right: .2rem;
+            }
+            .month-sale {
+              color: #666666;
+              transform: scale(0.9);
+            }
+            p {
+              margin-top: .3rem;
+              color: #666666;
+              font-size: .5rem;
+              transform: scale(0.9);
+            }
+          }
         }
       }
-      .shop-mes {
-        .shop-title {
-          color: #333333;
-          margin-bottom: .5rem;
-          .brand {
-            display: inline-block;
-            background-color: #FFD930;
+      .right {
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .shop-service {
+          span {
             font-size: .5rem;
-            border-radius: .1rem;
-            margin-right: .2rem;
-            padding: 0 0.1rem;
-            vertical-align: middle;
-          }
-          .shop-name {
+            color: #999999;
+            border: 0.025rem solid #F1F1F1;
+            padding: 0 0.04rem;
+            border-radius: 0.08rem;
             display: inline-block;
-            font-size: .65rem;
-            font-weight: 700;
-            vertical-align: middle;
+            transform: scale(0.8);
+          }
+          margin-bottom: .5rem;
+        }
+        .distribution {
+          display: inline-block;
+          transform: scale(0.8);
+          font-size: .4rem;
+          padding: 0.04rem 0.08rem 0;
+          border-radius: 0.08rem;
+          margin-right: -0.6rem;
+          .bird {
+            color: #FFFFFF;
+            background-color: #3190e8;
+            border: 0.025rem solid #3190e8;
+          }
+          .ontime {
+            margin-left: 0.08rem;
+            color: #3190e8;
+            border: 0.025rem solid #3190e8;
           }
         }
-        .shop-score {
-          position: relative;
-          .empty-stars {
-            background: url('../../images/color-stars_empty.png') no-repeat;
-            background-size: cover;
-            width: 2.8rem;
-            height: .4rem;
-            position: absolute;
-            top: 0.15rem;
-          }
-          .full-stars {
-            background: url('../../images/color-stars_full.png') no-repeat;
-            background-size: cover;
-            width: 0rem;
-            height: .4rem;
-            position: absolute;
-            top: 0.15rem;
-          }
-          span {
-            font-size: .4rem;
-            display: inline-block;
-          }
-          .star-num {
-            color: #FF6000;
-            margin-left: 3rem;
-            margin-right: .2rem;
-          }
-          .month-sale {
-            color: #666666;
-            transform: scale(0.9);
-          }
-          p {
-            margin-top: .3rem;
-            color: #666666;
-            font-size: .5rem;
-            transform: scale(0.9);
-          }
+        .shop-distance {
+          margin-top: 0.4rem;
+          color: #999;
+          transform: scale(0.9);
+          margin-right: -0.2rem;
         }
       }
     }
-    .right {
-      text-align: right;
+    .shop-activity {
+      border-top: 0.025rem solid #F1F1F1;
+      margin-left: 3.1rem;
+      padding-top: .2rem;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      .shop-service {
-        span {
-          font-size: .5rem;
+      .activity-list {
+        flex: auto;
+        margin-left: -.5rem;
+        li {
+          margin-bottom: .2rem;
+        }
+        li:last-of-type {
+          margin-bottom: 0;
+        }
+        p {
+          font-size: .266667rem;
+          transform: scale(0.9);
           color: #999999;
-          border: 0.025rem solid #F1F1F1;
-          padding: 0 0.04rem;
-          border-radius: 0.08rem;
+          span {
+            margin-right: .2rem;
+            color: #FFFFFF;
+            border-radius: .2rem;
+            text-align: center;
+            padding: 0 .1rem;
+          }
+          .new {
+            background-color: rgb(112, 188, 70);
+          }
+          .subtraction {
+            background-color: rgb(240, 115, 115);
+          }
+          .special {
+            background-color: rgb(241, 136, 79);
+          }
+          .discount {
+            background-color: rgb(240, 115, 115);
+          }
+        }
+      }
+      .activity-num {
+        float: right;
+        font-size: .266667rem;
+        color: #999999;
+        span {
+          position: relative;
+          top: .02rem;
+          left: .1rem;
           display: inline-block;
-          transform: scale(0.8);
+          width: 0;
+          height: 0;
+          border-width: .15rem;
+          border-style: solid;
+          border-color: #999 transparent transparent transparent;
+          transition: all .4s ease-in-out;
         }
-        margin-bottom: .5rem;
-      }
-      .distribution {
-        display: inline-block;
-        transform: scale(0.8);
-        font-size: .4rem;
-        padding: 0.04rem 0.08rem 0;
-        border-radius: 0.08rem;
-        margin-right: -0.6rem;
-        .bird {
-          color: #FFFFFF;
-          background-color: #3190e8;
-          border: 0.025rem solid #3190e8;
+        &.rotate {
+          span {
+            transform: rotate(180deg);
+            top: -.13rem;
+          }
         }
-        .ontime {
-          margin-left: 0.08rem;
-          color: #3190e8;
-          border: 0.025rem solid #3190e8;
-        }
-      }
-      .shop-distance {
-        margin-top: 0.4rem;
-        color: #999;
-        transform: scale(0.9);
-        margin-right: -0.2rem;
       }
     }
   }

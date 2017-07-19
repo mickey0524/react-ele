@@ -24,6 +24,17 @@ class Main extends Component {
         shopList: this.props.shopList
       }
     }
+
+    this.showActivity = (index, ev) => {
+      let target = ev.target;
+      if (target.nodeName == 'SPAN') {
+        target = target.parentNode;
+      }
+      target.classList.toggle('rotate');
+      let newList = this.state.shopList;
+      newList[index].showMoreActivity = !newList[index].showMoreActivity;
+      this.setState({shopList: newList});
+    }
   }
 
   componentDidMount() {
@@ -54,46 +65,74 @@ class Main extends Component {
             this.state.shopList.map((item, index) => {
               return (
                 <li className="shop-item" key={index}>
-                  <div className="left">
-                    <div className="shop-img">
-                      <img src={placeholder} data-img={item.imgUrl} className="lazy-load" />
-                    </div>
-                    {
-                      item.isNewShop &&
-                      <div className="new-shop">
-                        <span>新店</span>
+                  <div className="top-item" style={Object.assign({}, item.shopActivity && { marginBottom: 0.2 + 'rem' })}>
+                    <div className="left">
+                      <div className="shop-img">
+                        <img src={placeholder} data-img={item.imgUrl} className="lazy-load" />
                       </div>
-                    }
-                    <div className="shop-mes">
-                      <div className="shop-title">
+                      {
+                        item.isNewShop &&
+                        <div className="new-shop">
+                          <span>新店</span>
+                        </div>
+                      }
+                      <div className="shop-mes">
+                        <div className="shop-title">
+                          {
+                            item.isBrand && <span className="brand">品牌</span>
+                          }
+                          <span className="shop-name">{ item.shopName }</span>
+                        </div>
+                        <div className="shop-score">
+                          <div className="empty-stars"></div>
+                          <div className="full-stars" style={{ width: item.starNum * 0.56 + 'rem' }}></div>
+                          <span className="star-num">{ item.starNum }</span>
+                          <span className="month-sale">{ item.monthlySales }单</span>
+                          <p>¥{ item.initMoney }起送 / 配送费约¥{ item.deliveryFee }</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="right">
+                      <div className="shop-service">
+                        { item.isInsurance && <span>保</span> }
+                        { item.isOntime && <span>准</span> }
+                        { item.needtip && <span>票</span> }
+                      </div>
+                      <div className="distribution">
+                        { item.isBird && <span className="bird">蜂鸟专送</span> }
+                        { item.isOntime && <span className="ontime">准时达</span> }
+                      </div>
+                      <div className="shop-distance">
+                        { item.distance }公里 / <span>{ item.needTime }</span>
+                      </div>
+                    </div>
+                  </div>
+                  {
+                    item.shopActivity &&
+                    <div className="shop-activity">
+                      <ul className="activity-list">
                         {
-                          item.isBrand && <span className="brand">品牌</span>
+                          item.shopActivity.map((activity, index) => {
+                            return (
+                              (index < 2 || item.showMoreActivity) &&
+                              <li key={index}>
+                                <p>
+                                  { activity.variety === 'new' && <span className="new">新</span> }
+                                  { activity.variety === 'subtraction' && <span className="subtraction">减</span> }
+                                  { activity.variety === 'special' && <span className="special">特</span> }
+                                  { activity.variety === 'discount' && <span className="discount">折</span> }
+                                  { activity.slogan }
+                                </p>
+                              </li>
+                            );
+                          })
                         }
-                        <span className="shop-name">{ item.shopName }</span>
-                      </div>
-                      <div className="shop-score">
-                        <div className="empty-stars"></div>
-                        <div className="full-stars" style={{ width: item.starNum * 0.56 + 'rem' }}></div>
-                        <span className="star-num">{ item.starNum }</span>
-                        <span className="month-sale">{ item.monthlySales }单</span>
-                        <p>¥{ item.initMoney }起送 / 配送费约¥{ item.deliveryFee }</p>
+                      </ul>
+                      <div className="activity-num" onClick={(ev) => this.showActivity(index, ev)}>
+                        { item.shopActivity.length }个活动<span></span>
                       </div>
                     </div>
-                  </div>
-                  <div className="right">
-                    <div className="shop-service">
-                      { item.isInsurance && <span>保</span> }
-                      { item.isOntime && <span>准</span> }
-                      { item.needtip && <span>票</span> }
-                    </div>
-                    <div className="distribution">
-                      { item.isBird && <span className="bird">蜂鸟专送</span> }
-                      { item.isOntime && <span className="ontime">准时达</span> }
-                    </div>
-                    <div className="shop-distance">
-                      { item.distance }公里 / <span>{ item.needTime }</span>
-                    </div>
-                  </div>
+                  }
                 </li>
               )
             })
