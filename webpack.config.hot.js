@@ -11,7 +11,7 @@ var BUILD_PATH = path.resolve(ROOT_PATH, '/react-ele/dist'); //发布文件所�
 
 
 module.exports = {
-    devtool: 'cheap-module-eval-source-map',
+    //devtool: 'cheap-module-eval-source-map',
     entry: {
         app: [
             'webpack-hot-middleware/client',

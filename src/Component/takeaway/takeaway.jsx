@@ -12,6 +12,7 @@ class Main extends Component {
   static isTopShow = false;
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = {
       isTopShow: false
     }
@@ -35,7 +36,7 @@ class Main extends Component {
 
   render() {
     return (
-      <div id="takeaway">
+      <div id="takteaway">
         <TopBar route={this.props.route}></TopBar>
         <div className="takeaway-container" ref="takeaway">
           <Variety></Variety>

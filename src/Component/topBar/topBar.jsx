@@ -48,6 +48,14 @@ class Main extends Component {
       this.props.changeBottomBar(path);
       this.props.changeTopBar(changeTopBarStatus(path));
     }
+    else {
+      this.props.changeBottomBar('takeaway');
+      this.props.changeTopBar({
+        left: 'search',
+        middle: '北京邮电大学',
+        right: true
+      })
+    }
   }
 }
 
