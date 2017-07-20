@@ -1,0 +1,23 @@
+module.exports = {
+  "shopActivity": [
+    {
+      "variety": "new",
+      "slogan": "新用户下单立减17.0元"
+    },
+    {
+      "variety": "subtraction",
+      "slogan": "满40减20"
+    },
+    {
+      "variety": "special",
+      "slogan": "16元特惠"
+    },
+    {
+      "variety": "discount",
+      "slogan": "五折美食"
+    }
+  ],
+  "shopName": "南京大排档",
+  "shopAddress": "北京市海淀区中关村大街15-9号F1-R133、R137、R138",
+  "openTime": "10:55-14:25,16:30-21:30"
+}

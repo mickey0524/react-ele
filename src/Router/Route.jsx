@@ -43,6 +43,12 @@ const ac = (location, cb) => {
   }, 'ac')
 }
 
+const shopDetail = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/shopDetail/shopDetail').default)
+  }, 'shopDetail')
+}
+
 const RouteConfig = (
   <Router history={history}>
     <Route path="/" component={Roots}>
@@ -53,6 +59,7 @@ const RouteConfig = (
       <Route path="user" getComponent={user} />
       <Route path="shop" getComponent={shop} />
       <Route path="activityDetail" getComponent={ac} />
+      <Route path="shopDetail" getComponent={shopDetail} />
     </Route>
     <Redirect from='*' to='/' />
   </Router>

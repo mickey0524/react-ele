@@ -18,6 +18,9 @@ const changeTopBarStatus = (path) => {
   else if (path === 'user') {
     topBar.middle = '我的';
   }
+  else if (path === 'shopDetail') {
+    topBar.middle = '商家详情';
+  }
   return topBar;
 }
 

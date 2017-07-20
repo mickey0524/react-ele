@@ -15,6 +15,10 @@ class Main extends Component {
       const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
       history.push('/activityDetail');
     }
+    this.toShopDetail = (ev) => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/shopDetail');
+    }
     this.back = (ev) => {
       window.history.back();
     }
@@ -26,7 +30,7 @@ class Main extends Component {
         <div className="mask"></div>
         <div className="bg"></div>
         <div className="back-icon" onClick={this.back}></div>
-        <div className="shop">
+        <div className="shop" onClick={this.toShopDetail}>
           <div className="shop-img">
             <img src={this.state.shopMes.shopImg} />
           </div>
