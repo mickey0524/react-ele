@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../common/template';
-import IntersectionObserver from '../../Utils/intersection-observer.js';
+//import IntersectionObserver from '../../Utils/intersection-observer.js';
 import mockData from './mock.json';            // mock数据，目前不打算写服务端，只是为了熟悉react
 import placeholder from '../../images/placeholder-img.png';
+import Layzr from 'layzr.js';
 import './shopList.less';
 
 /**
@@ -12,7 +13,6 @@ import './shopList.less';
 class Main extends Component {
 
   constructor(props) {
-
     super(props);
     if (!this.props.route.path || this.props.route.path === 'takeaway') {
       this.state = {
@@ -27,9 +27,6 @@ class Main extends Component {
 
     this.showActivity = (index, ev) => {
       let target = ev.currentTarget;
-      // if (target.nodeName == 'SPAN') {
-      //   target = target.parentNode;
-      // }
       target.classList.toggle('rotate');
       let newList = this.state.shopList;
       newList[index].showMoreActivity = !newList[index].showMoreActivity;
@@ -38,23 +35,23 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    let queryLazyLoad = () => {
-      return Array.from(document.querySelectorAll('.lazy-load'));
-    }
-    let observer = new IntersectionObserver(
-      function(changes) {
-        changes.forEach(function(change) {
-          if (change.intersectionRatio != 0) {
-            var img = change.target;
-            img.src = img.dataset.img;
-            observer.unobserve(img);
-          }
-        });
-      }
-    );
-    queryLazyLoad().forEach((item) => {
-      observer.observe(item);
-    });
+    // let queryLazyLoad = () => {
+    //   return Array.from(document.querySelectorAll('.lazy-load'));
+    // }
+    // let observer = new IntersectionObserver(
+    //   function(changes) {
+    //     changes.forEach(function(change) {
+    //       if (change.intersectionRatio != 0) {
+    //         var img = change.target;
+    //         img.src = img.dataset.img;
+    //         observer.unobserve(img);
+    //       }
+    //     });
+    //   }
+    // );
+    // queryLazyLoad().forEach((item) => {
+    //   observer.observe(item);
+    // });
   }
 
   render () {
@@ -68,7 +65,7 @@ class Main extends Component {
                   <div className="top-item" style={Object.assign({}, item.shopActivity && { marginBottom: 0.2 + 'rem' })}>
                     <div className="left">
                       <div className="shop-img">
-                        <img src={placeholder} data-img={item.imgUrl} className="lazy-load" />
+                        <img src={placeholder} data-normal={item.imgUrl} className="lazy-load" />
                       </div>
                       {
                         item.isNewShop &&

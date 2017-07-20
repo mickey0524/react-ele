@@ -5,6 +5,7 @@ import Variety from '../variety/variety';
 import ShopList from '../shopList/shopList';
 import BottomBar from '../bottomBar/bottomBar';
 import Interval from '../interval/interval';
+import Layzr from 'layzr.js';
 import './takeaway.less';
 
 class Main extends Component {
@@ -42,8 +43,19 @@ class Main extends Component {
   }
 
   componentDidMount() {
+    const layzrInstance = Layzr();
+    document.addEventListener('DOMContentLoaded', event => {
+      layzrInstance
+        .update()           // track initial elements
+        .check()            // check initial elements
+        .handlers(false);
+    });
     let _this = this;
     this.refs.takeaway.addEventListener('scroll', function(ev) {
+      layzrInstance
+        .update()           // track initial elements
+        .check()            // check initial elements
+        .handlers(true);
       if (ev.target.scrollTop > 200) {
         _this.setState({ isTopShow: true });
       }
@@ -51,6 +63,7 @@ class Main extends Component {
         _this.setState({ isTopShow: false });
       }
     }, false);
+
   }
 }
 

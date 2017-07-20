@@ -19,6 +19,7 @@
     "github-markdown-css": "^2.4.0",
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.2.1",
+    "layzr.js": "^2.2.2",
     "normalize.css": "^4.1.1",
     "pure-render-decorator": "^1.2.1",
     "react": "^15.3.2",
