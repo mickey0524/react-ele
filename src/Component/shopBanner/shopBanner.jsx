@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../common/template';
+import { browserHistory, hashHistory } from 'react-router';
 import mockData from './mockData.json';
 import './shopBanner.less';
 
@@ -10,6 +11,13 @@ class Main extends Component {
     this.state = {
       shopMes: mockData
     }
+    this.toActivityDetail = (ev) => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/activityDetail');
+    }
+    this.back = (ev) => {
+      window.history.back();
+    }
   }
 
   render() {
@@ -17,7 +25,7 @@ class Main extends Component {
       <div id="shopBanner">
         <div className="mask"></div>
         <div className="bg"></div>
-        <div className="back-icon"></div>
+        <div className="back-icon" onClick={this.back}></div>
         <div className="shop">
           <div className="shop-img">
             <img src={this.state.shopMes.shopImg} />
@@ -31,7 +39,7 @@ class Main extends Component {
             >
           </div>
         </div>
-        <div className="shop-activity">
+        <div className="shop-activity" onClick={this.toActivityDetail}>
           <span>新</span>
           { this.state.shopMes.slogan }
           <span>{ this.state.shopMes.activityNum }个活动</span>

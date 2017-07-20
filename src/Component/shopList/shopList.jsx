@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../common/template';
+import { browserHistory, hashHistory } from 'react-router';
 //import IntersectionObserver from '../../Utils/intersection-observer.js';
 import mockData from './mock.json';            // mock数据，目前不打算写服务端，只是为了熟悉react
 import placeholder from '../../images/placeholder-img.png';
@@ -32,6 +33,11 @@ class Main extends Component {
       newList[index].showMoreActivity = !newList[index].showMoreActivity;
       this.setState({shopList: newList});
     }
+
+    this.toShopDetail = (ev) => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/shop');
+    }
   }
 
   componentDidMount() {
@@ -61,7 +67,7 @@ class Main extends Component {
           {
             this.state.shopList.map((item, index) => {
               return (
-                <li className="shop-item" key={index}>
+                <li className="shop-item" key={index} onClick={this.toShopDetail}>
                   <div className="top-item" style={Object.assign({}, item.shopActivity && { marginBottom: 0.2 + 'rem' })}>
                     <div className="left">
                       <div className="shop-img">

@@ -25,6 +25,12 @@ class Main extends Component {
       }, 1000 / 60);
       this.setState({ isTopShow: false });
     }
+    this.layzr = () => {
+      const layzrInstance = Layzr();
+      layzrInstance
+        .update()
+        .check()
+    }
   }
 
   render() {
@@ -41,21 +47,13 @@ class Main extends Component {
       </div>
     );
   }
-
   componentDidMount() {
-    const layzrInstance = Layzr();
     document.addEventListener('DOMContentLoaded', event => {
-      layzrInstance
-        .update()           // track initial elements
-        .check()            // check initial elements
-        .handlers(false);
+      this.layzr();
     });
     let _this = this;
     this.refs.takeaway.addEventListener('scroll', function(ev) {
-      layzrInstance
-        .update()           // track initial elements
-        .check()            // check initial elements
-        .handlers(true);
+      _this.layzr();
       if (ev.target.scrollTop > 200) {
         _this.setState({ isTopShow: true });
       }
@@ -63,7 +61,9 @@ class Main extends Component {
         _this.setState({ isTopShow: false });
       }
     }, false);
-
+  }
+  componentWillReceiveProps(newState) {
+    this.layzr();
   }
 }
 

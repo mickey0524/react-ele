@@ -10,6 +10,9 @@ class Main extends Component {
     this.state = {
       shopMes: mockData
     }
+    this.back = (ev) => {
+      window.history.back();
+    }
   }
 
   render() {
@@ -46,7 +49,7 @@ class Main extends Component {
           </div>
           { this.state.shopMes.slogan }
         </div>
-        <div className="back-icon">
+        <div className="back-icon" onClick={this.back}>
           <span>X</span>
         </div>
       </div>

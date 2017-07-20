@@ -31,6 +31,12 @@ const user = (location, cb) => {
   }, 'user')
 }
 
+const shop = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/shop/shop').default)
+  }, 'shop')
+}
+
 const ac = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../Component/activityDetail/activityDetail').default)
@@ -45,7 +51,8 @@ const RouteConfig = (
       <Route path="search" getComponent={search} />
       <Route path="order" getComponent={order} />
       <Route path="user" getComponent={user} />
-      <Route path="ac" getComponent={ac} />
+      <Route path="shop" getComponent={shop} />
+      <Route path="activityDetail" getComponent={ac} />
     </Route>
     <Redirect from='*' to='/' />
   </Router>
