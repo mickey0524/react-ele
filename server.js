@@ -1,28 +1,35 @@
 var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
+var express = require('express');
 var config = require('./webpack.config.dev');
+var proxyMiddleware = require('http-proxy-middleware')
 
-//代理服务器
-var proxy = [{
-	path: '/*/*', //必须得有一个文件地址，如果顶层文件夹名字不同，则用/*代替
-	target: 'http://cangdu.org',
-	host: 'cangdu.org',
-	secure: false
-}];
-var server = new WebpackDevServer(webpack(config), {
+var app = express();
+var compiler = webpack(config);
+
+app.use(require('webpack-dev-middleware')(compiler, {
 	publicPath: config.output.publicPath,
+	hot: true,
+	historyApiFallback: true,
+	inline: true,
 	progress: true,
 	stats: {
 		colors: true,
-	},
-	proxy
-});
+	}
+}));
+
+// //代理服务器
+// app.use('/shopro', proxyMiddleware({
+//     target: 'http://cangdu.org',
+//     changeOrigin: true,
+// }))
+
+app.use(require('webpack-hot-middleware')(compiler));
 
 //将其他路由，全部返回index.html
-server.app.get('*', function(req, res) {
+app.get('*', function(req, res) {
 	res.sendFile(__dirname + '/index.html')
 });
-server.listen(8088, function() {
-	console.log('正常打开8088端口')
 
+app.listen(8088, function() {
+	console.log('正常打开8088端口')
 });
