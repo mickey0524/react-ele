@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../common/template';
-import TopBar from '../topBar/topBar';
-import Variety from '../variety/variety';
-import ShopList from '../shopList/shopList';
-import BottomBar from '../bottomBar/bottomBar';
-import Interval from '../interval/interval';
+import TopBar from '../common/topBar/topBar';
+import Variety from './childComponent/variety/variety';
+import ShopList from '../common/shopList/shopList';
+import BottomBar from '../common/bottomBar/bottomBar';
+import Interval from '../common/interval/interval';
 import Layzr from 'layzr.js';
 import './takeaway.less';
 

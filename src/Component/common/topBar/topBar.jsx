@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import template from '../common/template';
+import template from '../template';
 import { browserHistory, hashHistory } from 'react-router';
-import { changeTopBarStatus } from '../../Utils/changeTopBarStatus';
+import { changeTopBarStatus } from '../../../Utils/changeTopBarStatus';
 import './topBar.less';
 
 class Main extends Component {

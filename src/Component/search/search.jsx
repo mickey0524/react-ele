@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../common/template';
 import mockData from './mockData.json';
-import TopBar from '../topBar/topBar';
-import BottomBar from '../bottomBar/bottomBar';
-import ShopList from '../shopList/shopList';
+import TopBar from '../common/topBar/topBar';
+import BottomBar from '../common/bottomBar/bottomBar';
+import ShopList from '../common/shopList/shopList';
 import './search.less';
 
 class Main extends Component {

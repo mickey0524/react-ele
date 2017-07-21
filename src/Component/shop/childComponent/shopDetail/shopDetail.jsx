@@ -1,8 +1,8 @@
 import React, { Component, ProtoType } from 'react';
 import template from '../../../common/template';
 import data from './mockData.json';
-import TopBar from '../../../topBar/topBar';
-import Interval from '../../../interval/interval';
+import TopBar from '../../../common/topBar/topBar';
+import Interval from '../../../common/interval/interval';
 import './shopDetail.less';
 
 class Main extends Component {

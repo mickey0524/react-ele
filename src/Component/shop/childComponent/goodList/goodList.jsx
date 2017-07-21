@@ -1,5 +1,5 @@
 import React, {Component, PropType} from 'react';
-import template from '../common/template';
+import template from '../../../common/template';
 import mockData from './mockData.json';
 import './goodList.less';
 

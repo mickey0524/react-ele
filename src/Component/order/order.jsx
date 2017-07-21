@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../common/template';
-import TopBar from '../topBar/topBar';
-import BottomBar from '../bottomBar/bottomBar';
-import Interval from '../interval/interval';
+import TopBar from '../common/topBar/topBar';
+import BottomBar from '../common/bottomBar/bottomBar';
+import Interval from '../common/interval/interval';
 import mockData from './mockData.json';
 import { dateToStamp } from '../../Utils/dateForm';
 import './order.less';

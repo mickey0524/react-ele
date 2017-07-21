@@ -39,14 +39,20 @@ const shop = (location, cb) => {
 
 const ac = (location, cb) => {
   require.ensure([], require => {
-    cb(null, require('../Component/activityDetail/activityDetail').default)
+    cb(null, require('../Component/shop/childComponent/activityDetail/activityDetail').default)
   }, 'ac')
 }
 
 const shopDetail = (location, cb) => {
   require.ensure([], require => {
-    cb(null, require('../Component/shopDetail/shopDetail').default)
+    cb(null, require('../Component/shop/childComponent/shopDetail/shopDetail').default)
   }, 'shopDetail')
+}
+
+const shopIndex = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/shop/childComponent/shopBanner/shopBanner').default)
+  }, 'shopIndex')
 }
 
 const RouteConfig = (
@@ -57,9 +63,11 @@ const RouteConfig = (
       <Route path="search" getComponent={search} />
       <Route path="order" getComponent={order} />
       <Route path="user" getComponent={user} />
-      <Route path="shop" getComponent={shop} />
-      <Route path="activityDetail" getComponent={ac} />
-      <Route path="shopDetail" getComponent={shopDetail} />
+      <Route path="shop" getComponent={shop}>
+        <IndexRoute getComponent={shopIndex} />
+        <Route path="activityDetail" getComponent={ac} />
+        <Route path="shopDetail" getComponent={shopDetail} />
+      </Route>
     </Route>
     <Redirect from='*' to='/' />
   </Router>

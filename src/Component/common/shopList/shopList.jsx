@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import template from '../common/template';
+import template from '../template';
 import { browserHistory, hashHistory } from 'react-router';
 //import IntersectionObserver from '../../Utils/intersection-observer.js';
 import mockData from './mock.json';            // mock数据，目前不打算写服务端，只是为了熟悉react
-import placeholder from '../../images/placeholder-img.png';
+import placeholder from '../../../images/placeholder-img.png';
 import Layzr from 'layzr.js';
 import './shopList.less';
 

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import template from '../common/template';
+import template from '../template';
 import { browserHistory, hashHistory } from 'react-router';
 import './bottomBar.less';
 
