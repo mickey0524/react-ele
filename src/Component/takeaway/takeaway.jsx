@@ -12,7 +12,6 @@ class Main extends Component {
   static isTopShow = false;
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
       isTopShow: false
     }
