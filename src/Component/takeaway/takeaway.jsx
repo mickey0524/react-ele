@@ -35,7 +35,7 @@ class Main extends Component {
 
   render() {
     return (
-      <div id="takteaway">
+      <div id="takeaway">
         <TopBar route={this.props.route}></TopBar>
         <div className="takeaway-container" ref="takeaway">
           <Variety></Variety>

@@ -55,6 +55,12 @@ const shopIndex = (location, cb) => {
   }, 'shopIndex')
 }
 
+const goodList = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/shop/childComponent/goodList/goodList').default)
+  }, 'goodList')
+}
+
 const RouteConfig = (
   <Router history={history}>
     <Route path="/" component={Roots}>
@@ -65,8 +71,8 @@ const RouteConfig = (
       <Route path="user" getComponent={user} />
       <Route path="shop" getComponent={shop}>
         <IndexRoute getComponent={shopIndex} />
-        <Route path="activityDetail" getComponent={ac} />
-        <Route path="shopDetail" getComponent={shopDetail} />
+        <Route path="/shop/activityDetail" getComponent={ac} />
+        <Route path="/shop/shopDetail" getComponent={shopDetail} />
       </Route>
     </Route>
     <Redirect from='*' to='/' />

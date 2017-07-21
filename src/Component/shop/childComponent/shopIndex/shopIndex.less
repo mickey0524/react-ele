@@ -1,0 +1,29 @@
+#shopIndex {
+  .switch-label {
+    height: 2rem;
+    line-height: 2rem;
+    border-bottom: 0.025rem solid #f1f1f1;
+    background: #FFFFFF;
+    font-size: .6rem;
+    color: #666;
+    span {
+      display: inline-block;
+      width: 50%;
+      text-align: center;
+      position: relative;
+    }
+    .active {
+      color: #3190e8;
+      &:after {
+        position: absolute;
+        content: '';
+        width: 1.45rem;
+        height: .06rem;
+        background: #3190e8;
+        top: 1.5rem;
+        left: 3.3rem;
+        border-radius: .07rem;
+      }
+    }
+  }
+}

@@ -13,11 +13,11 @@ class Main extends Component {
     }
     this.toActivityDetail = (ev) => {
       const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
-      history.push('/activityDetail');
+      history.push('/shop/activityDetail');
     }
     this.toShopDetail = (ev) => {
       const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
-      history.push('/shopDetail');
+      history.push('/shop/shopDetail');
     }
     this.back = (ev) => {
       window.history.back();
