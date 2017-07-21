@@ -51,7 +51,7 @@ const shopDetail = (location, cb) => {
 
 const shopIndex = (location, cb) => {
   require.ensure([], require => {
-    cb(null, require('../Component/shop/childComponent/shopBanner/shopBanner').default)
+    cb(null, require('../Component/shop/childComponent/shopIndex/shopIndex').default)
   }, 'shopIndex')
 }
 
