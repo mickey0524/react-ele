@@ -7,6 +7,17 @@ class Main extends Component {
 
   constructor(props) {
     super(props);
+    this.showSlogan = (ev) => {
+      let target = ev.target;
+      let ndSlogan = target.parentNode.nextElementSibling;
+      console.log(ndSlogan);
+      if (!ndSlogan.style.display || ndSlogan.style.display === 'none') {
+        ndSlogan.style.display = 'block';
+      }
+      else {
+        ndSlogan.style.display = 'none';
+      }
+    }
   }
 
   render() {
@@ -32,7 +43,7 @@ class Main extends Component {
               return (
                 <li key={index}>
                   <div className="title">
-                    {item.name}<span>{item.desc}</span><span>...</span>
+                    {item.name}<span>{item.desc}</span><span onTouchStart={this.showSlogan}>...</span>
                   </div>
                   <div className="float-slogan">{item.name} {item.desc}</div>
                   <ul>
