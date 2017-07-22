@@ -8,6 +8,11 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      consumption: '0.00',
+      payText: `¥${data.sendThreshold}元起送`,
+      // payText: Number(this.state.consumption) > data.sendThreshold ? '去支付' :
+      //           this.state.consumption === '0.00' ? `¥${data.sendThreshold}元起送`:
+      //           '还差¥' + (data.sendThreshold - Number(this.state.consumption)) + '元起送';
       carList: [
         {
           name: '臭豆腐',
@@ -135,10 +140,10 @@ class Main extends Component {
             </div>
           </div>
           <div className="car-mes">
-            <p>¥ 0.00</p>
-            <p>配送费¥5</p>
+            <p>¥ {this.state.consumption}</p>
+            <p>配送费¥{data.deliveryFee}</p>
           </div>
-          <div className="buy-icon">去结算</div>
+          <div className="buy-icon">{this.state.payText}</div>
         </div>
         <div className="mask" ref="mask" onClick={this.showShoppingCar}></div>
         <div className="car-detail" ref="carDetail">

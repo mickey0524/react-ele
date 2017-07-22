@@ -1,4 +1,6 @@
 module.exports = {
+  "deliveryFee": "5",
+  "sendThreshold": 20,
   "varieties": ["热销", "优惠", "超值套餐", "港式烧味"],
   "varietyList": [
     {
