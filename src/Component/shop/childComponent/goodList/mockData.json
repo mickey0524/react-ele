@@ -1,10 +1,10 @@
 module.exports = {
   "deliveryFee": "5",
   "sendThreshold": 20,
-  "varieties": ["热销", "优惠", "超值套餐", "港式烧味"],
   "varietyList": [
     {
       "name": "热销",
+      "orderNum": 0,
       "desc": "大家喜欢吃，才叫真好吃。",
       "goodList": [
         {
@@ -12,7 +12,8 @@ module.exports = {
           "name": "港仔咖喱鱼饭",
           "monthSale": "823",
           "favorableRate": "97",
-          "nowPrice": "9.5"
+          "nowPrice": "9.5",
+          "orderNum": 0
         },
         {
           "avatar": "https://fuss10.elemecdn.com/6/90/a5123e470c258ee2076b70d83ad07jpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/",
@@ -20,7 +21,8 @@ module.exports = {
           "monthSale": "790",
           "favorableRate": "93",
           "nowPrice": "25",
-          "desc": "正宗香港叉烧，百年匠艺，配以青菜、三色豆及鸭蛋，极致鲜美。"
+          "desc": "正宗香港叉烧，百年匠艺，配以青菜、三色豆及鸭蛋，极致鲜美。",
+          "orderNum": 0
         },
         {
           "avatar": "https://fuss10.elemecdn.com/f/fe/1f2fc911702a1c9094a57b8696b30jpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/",
@@ -28,12 +30,14 @@ module.exports = {
           "monthSale": "790",
           "favorableRate": "93",
           "nowPrice": "25",
-          "desc": "正宗香港叉烧，百年匠艺，配以青菜、三色豆及鸭蛋，极致鲜美。"
+          "desc": "正宗香港叉烧，百年匠艺，配以青菜、三色豆及鸭蛋，极致鲜美。",
+          "orderNum": 0
         }
       ]
     },
     {
       "name": "优惠",
+      "orderNum": 0,
       "desc": "美味又实惠, 大家快来抢!",
       "goodList": [
         {
@@ -42,7 +46,8 @@ module.exports = {
           "monthSale": "99",
           "favorableRate": "83",
           "oriPrice": "41",
-          "nowPrice": "20.5"
+          "nowPrice": "20.5",
+          "orderNum": 0
         },
         {
           "avatar": "https://fuss10.elemecdn.com/9/7a/a0a69449d3d04ac810704ca7240ccjpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/",
@@ -50,7 +55,8 @@ module.exports = {
           "monthSale": "76",
           "favorableRate": "87",
           "oriPrice": "40.5",
-          "nowPrice": "20.25"
+          "nowPrice": "20.25",
+          "orderNum": 0
         },
         {
           "avatar": "https://fuss10.elemecdn.com/d/b3/91e034d3ec58b999c793ce0750ae4jpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/",
@@ -58,38 +64,44 @@ module.exports = {
           "monthSale": "140",
           "favorableRate": "82",
           "oriPrice": "38.5",
-          "nowPrice": "19.25"
+          "nowPrice": "19.25",
+          "orderNum": 0
         }
       ]
     },
     {
       "name": "超值套餐",
+      "orderNum": 0,
       "goodList": [
         {
           "avatar": "https://fuss10.elemecdn.com/d/ab/96e34a07ba430ce43d0ac4963b0e3jpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/",
           "name": "港岛至尊五宝饭+栗米猪骨汤",
           "monthSale": "141",
           "favorableRate": "96",
-          "nowPrice": "40"
+          "nowPrice": "40",
+          "orderNum": 0
         },
         {
           "avatar": "https://fuss10.elemecdn.com/e/1c/0737aaafa53df963fa92e33ed2d30jpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/",
           "name": "正点手搣盐焗鸡饭+手工拉奶茶",
           "monthSale": "42",
           "favorableRate": "90",
-          "nowPrice": "37"
+          "nowPrice": "37",
+          "orderNum": 0
         },
         {
           "avatar": "https://fuss10.elemecdn.com/0/95/210eb6f303d012acb48b74f58d4e0jpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/",
           "name": "黯然销魂叉烧饭+手工拉奶茶",
           "monthSale": "300",
           "favorableRate": "94",
-          "nowPrice": "39"
+          "nowPrice": "39",
+          "orderNum": 0
         }
       ]
     },
     {
       "name": "港式烧味",
+      "orderNum": 0,
       "goodList": [
         {
           "avatar": "https://fuss10.elemecdn.com/6/90/a5123e470c258ee2076b70d83ad07jpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/",
@@ -97,7 +109,8 @@ module.exports = {
           "desc": "正宗香港叉烧，百年匠艺，配以青菜、三色豆及鸭蛋，极致鲜美。",
           "monthSale": "790",
           "favorableRate": "93",
-          "nowPrice": "25"
+          "nowPrice": "25",
+          "orderNum": 0
         },
         {
           "avatar": "https://fuss10.elemecdn.com/6/a8/e501e87f10cc1df4a6702920ebf77jpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/",
@@ -105,7 +118,8 @@ module.exports = {
           "desc": "两对甜蜜鸡翅，配以青菜、三色豆及鸭蛋，甜蜜不失清爽。",
           "monthSale": "39",
           "favorableRate": "100",
-          "nowPrice": "28"
+          "nowPrice": "28",
+          "orderNum": 0
         },
         {
           "avatar": "https://fuss10.elemecdn.com/9/5a/4d424a7cb4f2cb171e7ea6c64db3bjpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/",
@@ -113,7 +127,8 @@ module.exports = {
           "desc": "地道香港豉汁排骨，配以青菜、三色豆及鸭蛋，回忆老味道。",
           "monthSale": "71",
           "favorableRate": "100",
-          "nowPrice": "28"
+          "nowPrice": "28",
+          "orderNum": 0
         }
       ]
     }

@@ -14,17 +14,18 @@ class Main extends Component {
       //           this.state.consumption === '0.00' ? `¥${data.sendThreshold}元起送`:
       //           '还差¥' + (data.sendThreshold - Number(this.state.consumption)) + '元起送';
       carList: [
-        {
-          name: '臭豆腐',
-          price: 20,
-          num: 1
-        },
-        {
-          name: '臭豆腐',
-          price: 20,
-          num: 1
-        }
-      ]
+        // {
+        //   name: '臭豆腐',
+        //   price: 20,
+        //   num: 1
+        // },
+        // {
+        //   name: '臭豆腐',
+        //   price: 20,
+        //   num: 1
+        // }
+      ],
+      data
     }
     this.showSlogan = (ev) => {
       let target = ev.target;
@@ -69,12 +70,61 @@ class Main extends Component {
     }
     this.showShoppingCar = (ev) => {
       let target = ev.currentTarget;
-      if (target.classList.contains('buy-icon')) {
+      if (target.classList.contains('buy-icon') || !this.refs.carImg.classList.contains('active')) {
         return;
       }
-      this.refs.carImg.classList.toggle('active');
+      //this.refs.carImg.classList.toggle('active');
       this.refs.mask.classList.toggle('active');
       this.refs.carDetail.classList.toggle('active');
+    }
+    this.addGood = (index, goodIndex) => {
+      let data = this.state.data;
+      data.varietyList[index].orderNum += 1;
+      data.varietyList[index].goodList[goodIndex].orderNum += 1;
+      let consumption = Number(this.state.consumption) + Number(data.varietyList[index].goodList[goodIndex].nowPrice);
+      let payText = this.getPayText(consumption);
+      let carList = this.state.carList;
+      let goodName = data.varietyList[index].goodList[goodIndex].name;
+      let isExist = true;
+      for (let i = 0; i < carList.length; i++) {
+        if (carList[i].name == goodName) {
+          carList[i].num += 1;
+          carList[i].price += Number(data.varietyList[index].goodList[goodIndex].nowPrice);
+          isExist = false;
+          break;
+        }
+      }
+      if (isExist) {
+        carList.push({
+          name: goodName,
+          price: Number(data.varietyList[index].goodList[goodIndex].nowPrice),
+          num: 1
+        });
+      }
+      if (!this.refs.carImg.classList.contains('active')) {
+        this.refs.carImg.classList.add('active');
+      }
+      this.setState({
+        data,
+        consumption,
+        payText,
+        carList
+      });
+    }
+    this.getPayText = (price) => {
+      if (price == 0.00) {
+        this.refs.buyIcon.classList.remove('active');
+        return `¥${data.sendThreshold}元起送`;
+      }
+      if (price > data.sendThreshold) {
+        this.refs.buyIcon.classList.add('active');
+        return '去支付';
+      }
+      else {
+        this.refs.buyIcon.classList.remove('active');
+        let money = data.sendThreshold - Number(price);
+        return `还差¥${money}元起送`;
+      }
     }
   }
 
@@ -84,10 +134,11 @@ class Main extends Component {
         <div className="good-variety">
           <ul>
           {
-            data.varieties.map((item, index) => {
+            this.state.data.varietyList.map((item, index) => {
               return (
                 <li key={index} className={index === 0 && 'active'} onClick={this.changeVariety}>
-                  <span onClick={this.changeVariety}>{item}</span>
+                  <span onClick={this.changeVariety}>{item.name}</span>
+                  { item.orderNum > 0 && <span className="order-num">{item.orderNum}</span> }
                 </li>
               );
             })
@@ -97,7 +148,7 @@ class Main extends Component {
         <div className="good-list" ref="goods">
           <ul>
           {
-            data.varietyList.map((item, index) => {
+            this.state.data.varietyList.map((item, index) => {
               return (
                 <li key={index} data-name={item.name}>
                   <div className="title">
@@ -119,7 +170,9 @@ class Main extends Component {
                             <div className="good-price">
                               <span className="now-price">¥{goodItem.nowPrice}</span>
                               { goodItem.oriPrice && <del>¥{goodItem.oriPrice}</del> }
-                              <span className="add-good"></span>
+                              <span className="add-good" onClick={() => this.addGood(index, goodIndex)}></span>
+                              { goodItem.orderNum > 0 && <span className="order-num">{ goodItem.orderNum }</span>}
+                              { goodItem.orderNum > 0 && <span className="sub-good"></span>}
                             </div>
                           </div>
                         </li>
@@ -143,7 +196,7 @@ class Main extends Component {
             <p>¥ {this.state.consumption}</p>
             <p>配送费¥{data.deliveryFee}</p>
           </div>
-          <div className="buy-icon">{this.state.payText}</div>
+          <div className="buy-icon" ref="buyIcon">{this.state.payText}</div>
         </div>
         <div className="mask" ref="mask" onClick={this.showShoppingCar}></div>
         <div className="car-detail" ref="carDetail">
