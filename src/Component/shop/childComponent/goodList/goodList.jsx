@@ -18,6 +18,37 @@ class Main extends Component {
         ndSlogan.style.display = 'none';
       }
     }
+    this.changeVariety = (ev) => {
+      let target = ev.target;
+      if (target.nodeName === 'SPAN') {
+        target = target.parentNode;
+      }
+      let parentNode = target.parentNode;
+      Array.from(parentNode.children).forEach((item) => {
+        item.classList.remove('active');
+      });
+      target.classList.add('active');
+      this.goodListScroll(target.textContent);
+    }
+    this.goodListScroll = (key) => {
+      let goodList = this.refs.goods;
+      let liList = goodList.children[0].children;
+      for (let i = 0; i < liList.length; i++) {
+        if (liList[i].dataset.name == key) {
+          let heightDiff = (Number(liList[i].offsetTop) - Number(goodList.scrollTop)) * 0.06;
+          let timer = setInterval(() => {
+            goodList.scrollTop += heightDiff;
+            if (heightDiff > 0 && goodList.scrollTop >= liList[i].offsetTop ||
+                heightDiff < 0 && goodList.scrollTop <= liList[i].offsetTop ||
+                goodList.scrollTop == goodList.scrollHeight - goodList.offsetHeight) {
+              clearInterval(timer);
+              goodList.scrollTop = liList[i].offsetTop;
+            }
+          }, 1000 / 60);
+          break;
+        }
+      }
+    }
   }
 
   render() {
@@ -28,22 +59,22 @@ class Main extends Component {
           {
             data.varieties.map((item, index) => {
               return (
-                <li key={index} className={index === 0 && 'active'}>
-                  <span>{item}</span>
+                <li key={index} className={index === 0 && 'active'} onClick={this.changeVariety}>
+                  <span onClick={this.changeVariety}>{item}</span>
                 </li>
               );
             })
           }
           </ul>
         </div>
-        <div className="good-list">
+        <div className="good-list" ref="goods">
           <ul>
           {
             data.varietyList.map((item, index) => {
               return (
-                <li key={index}>
+                <li key={index} data-name={item.name}>
                   <div className="title">
-                    {item.name}<span>{item.desc}</span><span onTouchStart={this.showSlogan}>...</span>
+                    {item.name}<span>{item.desc}</span><span onClick={this.showSlogan}>...</span>
                   </div>
                   <div className="float-slogan">{item.name} {item.desc}</div>
                   <ul>
