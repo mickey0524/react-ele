@@ -7,10 +7,23 @@ class Main extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      carList: [
+        {
+          name: '臭豆腐',
+          price: 20,
+          num: 1
+        },
+        {
+          name: '臭豆腐',
+          price: 20,
+          num: 1
+        }
+      ]
+    }
     this.showSlogan = (ev) => {
       let target = ev.target;
       let ndSlogan = target.parentNode.nextElementSibling;
-      console.log(ndSlogan);
       if (!ndSlogan.style.display || ndSlogan.style.display === 'none') {
         ndSlogan.style.display = 'block';
       }
@@ -48,6 +61,15 @@ class Main extends Component {
           break;
         }
       }
+    }
+    this.showShoppingCar = (ev) => {
+      let target = ev.currentTarget;
+      if (target.classList.contains('buy-icon')) {
+        return;
+      }
+      this.refs.carImg.classList.toggle('active');
+      this.refs.mask.classList.toggle('active');
+      this.refs.carDetail.classList.toggle('active');
     }
   }
 
@@ -105,6 +127,47 @@ class Main extends Component {
             })
           }
           </ul>
+        </div>
+        <div className="shopping-car" onClick={this.showShoppingCar}>
+          <div className="car-avatar">
+            <div className="car-img" ref="carImg">
+              <span></span>
+            </div>
+          </div>
+          <div className="car-mes">
+            <p>¥ 0.00</p>
+            <p>配送费¥5</p>
+          </div>
+          <div className="buy-icon">去结算</div>
+        </div>
+        <div className="mask" ref="mask" onClick={this.showShoppingCar}></div>
+        <div className="car-detail" ref="carDetail">
+          <div className="top-bar">
+            <span>购物车</span>
+            <div className="clear">
+              <span></span>
+              清空
+            </div>
+          </div>
+          <div className="car-list">
+            <ul>
+            {
+              this.state.carList.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <span>{item.name}</span>
+                    <span>¥{item.price}</span>
+                    <div className="add-sub">
+                      <span className="img"></span>
+                      <span>{item.num}</span>
+                      <span className="img"></span>
+                    </div>
+                  </li>
+                );
+              })
+            }
+            </ul>
+          </div>
         </div>
       </div>
     );

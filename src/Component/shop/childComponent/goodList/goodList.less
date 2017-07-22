@@ -137,4 +137,161 @@
       }
     }
   }
+  .shopping-car {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #3d3d3f;
+    height: 2rem;
+    color: #FFF;
+    z-index: 10;
+    div {
+      display: inline-block;
+    }
+    .car-avatar {
+      width: 3rem;
+      height: 100%;
+      position: relative;
+      top: -.5rem;
+      left: .6rem;
+      .car-img {
+        position: absolute;
+        width: 1.6rem;
+        height: 1.6rem;
+        background: #3d3d3f;
+        &.active {
+          background: #3190E8;
+        }
+        border: .2rem solid #4D4D4D;
+        border-radius: 50%;
+        span {
+          width: 1rem;
+          position: absolute;
+          left: .3rem;
+          top: .3rem;
+          height: 1rem;
+          background: 0 0 no-repeat;
+          background-size: 100%;
+          background-image: url("../../../../images/car.png");
+        }
+      }
+    }
+    .car-mes {
+      width: auto;
+      vertical-align: top;
+      margin-top: .06rem;
+      margin-left: .4rem;
+      p:first-of-type {
+        font-size: .8rem;
+        font-weight: bold;
+      }
+      p:last-of-type {
+        font-size: .4rem;
+      }
+    }
+    .buy-icon {
+      width: 4.5rem;
+      height: 100%;
+      float: right;
+      line-height: 2rem;
+      text-align: center;
+      background-color: #5B5B5E;
+      &.active {
+        background-color: #4cd964;
+      }
+      font-size: .6rem;
+    }
+  }
+  .mask {
+    &.active {
+      display: block;
+    }
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .car-detail {
+    &.active {
+      transform: translateY(0);
+    }
+    transform: translateY(100%);
+    transition: all .35s ease;
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    .top-bar {
+      width: 100%;
+      background-color: #EcEfF1;
+      line-height: .9rem;
+      padding: .3rem .6rem;
+      box-sizing: border-box;
+      color: #666;
+      >span {
+        font-size: .7rem;
+        padding-left: .3rem;
+        border-left: .12rem solid #3190e8;
+      }
+      .clear {
+        float: right;
+        font-size: .5rem;
+        span {
+          background: 0 0 no-repeat;
+          background-size: 100%;
+          background-image: url("../../../../images/trash.png");
+          width: .6rem;
+          height: .6rem;
+          display: inline-block;
+          position: relative;
+          top: .1rem;
+          right: .1rem;
+        }
+      }
+    }
+    .car-list {
+      background: #FFF;
+      li {
+        display: flex;
+        align-items: center;
+        height: 2rem;
+        margin-left: .5rem;
+        border-bottom: 0.025rem solid #EEE;
+        span:first-of-type {
+          font-size: .7rem;
+          color: #666;
+          flex: 3;
+        }
+        span:last-of-type {
+          font-size: .7rem;
+          color: #F60;
+          flex: 1;
+        }
+        .add-sub {
+          flex: 1;
+          font-size: .65rem;
+          .img {
+            background: 0 0 no-repeat;
+            background-size: 100%;
+            width: .8rem;
+            height: .8rem;
+            display: inline-block;
+            position: relative;
+            top: .15rem;
+          }
+          span:first-of-type {
+            left: -.5rem;
+            background-image: url("../../../../images/sub.png");
+          }
+          span:last-of-type {
+            left: .5rem;
+            background-image: url("../../../../images/add.png");
+          }
+        }
+      }
+    }
+  }
 }
