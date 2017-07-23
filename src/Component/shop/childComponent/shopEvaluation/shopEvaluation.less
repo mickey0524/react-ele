@@ -1,0 +1,171 @@
+#shopEvaluation {
+  width: 50%;
+  height: 21rem;
+  overflow: scroll;
+  .shop-score {
+    padding: .6rem;
+    .shop-decimal {
+      display: inline-block;
+      width: 33%;
+      text-align: center;
+      border-right: 0.05rem solid #DDD;
+      p:first-of-type {
+        font-size: 1.2rem;
+        color: #f60;
+      }
+      p:nth-of-type(2) {
+        font-size: 0.6rem;
+        color: #666;
+      }
+      p:last-of-type {
+        font-size: 0.4rem;
+        color: #999;
+      }
+    }
+    .shop-star {
+      width: 65%;
+      vertical-align: top;
+      padding-left: 1rem;
+      box-sizing: border-box;
+      display: inline-block;
+      margin-top: .2rem;
+      div {
+        margin-bottom: .3rem;
+        position: relative;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        span:first-of-type {
+          color: #666;
+          margin-right: .5rem;
+          font-size: .6rem;
+        }
+        .score {
+          color: #f60;
+          font-size: .55rem;
+          margin-left: 3.3rem;
+          position: relative;
+          top: -.1rem;
+        }
+        .empty-star, .full-star {
+          background: 0 0 no-repeat;
+          background-image: url('../../../../images/color-stars_empty.png');
+          background-size: cover;
+          width: 2.8rem;
+          height: .4rem;
+          position: absolute;
+          top: 0.15rem;
+        }
+        .full-star {
+          background-image: url('../../../../images/color-stars_full.png');
+          width: 0;
+        }
+      }
+      .time {
+        span:last-of-type {
+          font-size: .35rem;
+          color: #999;
+        }
+      }
+    }
+  }
+  .user-evaluation {
+    padding: .6rem .5rem;
+    .evaluation-variety {
+      border-bottom: 0.025rem solid #DDD;
+      padding-bottom: .4rem;
+      padding-top: .2rem;
+      span {
+        font-size: .5rem;
+        display: inline-block;
+        border-radius: .2rem;
+        padding: .3rem;
+        background: #EBF5FF;
+        color: #6E7986;
+        margin-right: .4rem;
+        margin-bottom: .4rem;
+        &.active {
+          background: #3190E8;
+          color: #FFF;
+        }
+        &.bad {
+          &.active {
+            background: #CCC;
+            color: #F6F6F6;
+          }
+          color: #AAA;
+          background: #F5F5F5;
+        }
+      }
+    }
+    .evaluation-list {
+      >li {
+        padding: .6rem 0 .3rem;
+        border-bottom: 0.025rem solid #DDD;
+        display: flex;
+        .user-avatar img {
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: 50%;
+          margin-right: .6rem;
+        }
+        .user-eval {
+          flex: auto;
+          .user-mes {
+            position: relative;
+            p:first-of-type {
+              color: #666;
+              font-size: .5rem;
+              margin-bottom: .15rem;
+              span {
+                font-size: .4rem;
+                float: right;
+              }
+            }
+            .empty-star, .full-star {
+              background: 0 0 no-repeat;
+              background-image: url('../../../../images/color-stars_empty.png');
+              background-size: cover;
+              width: 2.8rem;
+              height: .4rem;
+              position: absolute;
+              top: .95rem;
+            }
+            .full-star {
+              background-image: url('../../../../images/color-stars_full.png');
+              width: 0;
+            }
+            .cost-time {
+              margin-left: 3rem;
+              color: #999;
+              font-size: .55rem;
+            }
+          }
+          .evaluation-content {
+            padding: 0.15rem 0;
+            font-size: .55rem;
+            color: #333;
+          }
+          .food-list {
+            margin-top: .2rem;
+            span {
+              font-size: 0.55rem;
+              color: #999;
+              width: 1.8rem;
+              text-align: center;
+              display: inline-block;
+              padding: .1rem .2rem;
+              border: 0.025rem solid #ebebeb;
+              border-radius: 0.15rem;
+              margin-right: .3rem;
+              margin-bottom: .3rem;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}

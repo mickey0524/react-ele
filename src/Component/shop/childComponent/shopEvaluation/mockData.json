@@ -1,0 +1,66 @@
+module.exports = {
+  "score": "4.6",
+  "ratio": "49",
+  "service": 4.6,
+  "dish": 4.7,
+  "time": "49",
+  "variety": [
+    {
+      "name": "全部",
+      "num": "470"
+    },
+    {
+      "name": "满意",
+      "num": "454"
+    },
+    {
+      "name": "不满意",
+      "num": "16"
+    },
+    {
+      "name": "有图",
+      "num": "2"
+    },
+    {
+      "name": "全部",
+      "num": "470"
+    },
+    {
+      "name": "满意",
+      "num": "454"
+    },
+    {
+      "name": "2333",
+      "num": "16"
+    },
+    {
+      "name": "有图",
+      "num": "2"
+    }
+  ],
+  "evaluationList": [
+    {
+      "avatar": "https://fuss10.elemecdn.com/b/db/1d59ab8629efb12d92fc47a0b83c6jpeg.jpeg?imageMogr/format/webp/thumbnail/!60x60r/gravity/Center/crop/60x60/",
+      "name": "匿名用户",
+      "time": "2017-07-22",
+      "food": ["可乐asdads", "烤翅", "汉堡", "薯条"],
+      "content": "整体很好很满意就是我们吃完突然发现少一道菜鸭脖没有给不过吃的还很开心就算了希望下次认真对待哦",
+      "costTime": "50",
+      "star": "4.7"
+    },
+    {
+      "avatar": "https://fuss10.elemecdn.com/b/db/1d59ab8629efb12d92fc47a0b83c6jpeg.jpeg?imageMogr/format/webp/thumbnail/!60x60r/gravity/Center/crop/60x60/",
+      "name": "匿名用户",
+      "time": "2017-07-22",
+      "food": ["可乐", "烤翅"],
+      "star": "2"
+    },
+    {
+      "avatar": "https://fuss10.elemecdn.com/b/db/1d59ab8629efb12d92fc47a0b83c6jpeg.jpeg?imageMogr/format/webp/thumbnail/!60x60r/gravity/Center/crop/60x60/",
+      "name": "匿名用户",
+      "time": "2017-07-22",
+      "food": ["可乐", "烤翅", "汉堡"],
+      "star": "3"
+    }
+  ]
+}
