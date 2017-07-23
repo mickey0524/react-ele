@@ -10,21 +10,7 @@ class Main extends Component {
     this.state = {
       consumption: '0.00',
       payText: `¥${data.sendThreshold}元起送`,
-      // payText: Number(this.state.consumption) > data.sendThreshold ? '去支付' :
-      //           this.state.consumption === '0.00' ? `¥${data.sendThreshold}元起送`:
-      //           '还差¥' + (data.sendThreshold - Number(this.state.consumption)) + '元起送';
-      carList: [
-        // {
-        //   name: '臭豆腐',
-        //   price: 20,
-        //   num: 1
-        // },
-        // {
-        //   name: '臭豆腐',
-        //   price: 20,
-        //   num: 1
-        // }
-      ],
+      carList: [],
       data
     }
     this.showSlogan = (ev) => {
@@ -98,7 +84,9 @@ class Main extends Component {
         carList.push({
           name: goodName,
           price: Number(data.varietyList[index].goodList[goodIndex].nowPrice),
-          num: 1
+          num: 1,
+          index,
+          goodIndex
         });
       }
       if (!this.refs.carImg.classList.contains('active')) {
@@ -111,7 +99,7 @@ class Main extends Component {
         carList
       });
     }
-    this.subGood = (index, goodIndex) => {
+    this.subGood = (index, goodIndex, key) => {
       let data = this.state.data;
       if (data.varietyList[index].orderNum > 0) {
         data.varietyList[index].orderNum -= 1;
@@ -135,6 +123,10 @@ class Main extends Component {
       }
       if (carList.length === 0) {
         this.refs.carImg.classList.remove('active');
+        if (key) {
+          this.refs.mask.remove('active');
+          this.refs.carDetail.remove('active');
+        }
       }
       this.setState({
         data,
@@ -248,9 +240,9 @@ class Main extends Component {
                     <span>{item.name}</span>
                     <span>¥{item.price}</span>
                     <div className="add-sub">
-                      <span className="img"></span>
+                      <span className="img" onClick={() => this.subGood(item.index, item.goodIndex, 'shoppingCar')}></span>
                       <span>{item.num}</span>
-                      <span className="img"></span>
+                      <span className="img" onClick={() => this.addGood(item.index, item.goodIndex)}></span>
                     </div>
                   </li>
                 );
