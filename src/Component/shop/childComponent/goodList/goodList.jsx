@@ -111,6 +111,38 @@ class Main extends Component {
         carList
       });
     }
+    this.subGood = (index, goodIndex) => {
+      let data = this.state.data;
+      if (data.varietyList[index].orderNum > 0) {
+        data.varietyList[index].orderNum -= 1;
+      }
+      data.varietyList[index].goodList[goodIndex].orderNum -= 1;
+      let consumption = Number(this.state.consumption) - Number(data.varietyList[index].goodList[goodIndex].nowPrice);
+      let payText = this.getPayText(consumption);
+      let carList = this.state.carList;
+      let goodName = data.varietyList[index].goodList[goodIndex].name;
+      for (let i = 0; i < carList.length; i++) {
+        if (carList[i].name == goodName) {
+          if (carList[i].num > 1) {
+            carList[i].num -= 1;
+            carList[i].price -= Number(data.varietyList[index].goodList[goodIndex].nowPrice);
+          }
+          else {
+            carList.splice(i, 1);
+          }
+          break;
+        }
+      }
+      if (carList.length === 0) {
+        this.refs.carImg.classList.remove('active');
+      }
+      this.setState({
+        data,
+        consumption,
+        payText,
+        carList
+      });
+    }
     this.getPayText = (price) => {
       if (price == 0.00) {
         this.refs.buyIcon.classList.remove('active');
@@ -172,7 +204,7 @@ class Main extends Component {
                               { goodItem.oriPrice && <del>¥{goodItem.oriPrice}</del> }
                               <span className="add-good" onClick={() => this.addGood(index, goodIndex)}></span>
                               { goodItem.orderNum > 0 && <span className="order-num">{ goodItem.orderNum }</span>}
-                              { goodItem.orderNum > 0 && <span className="sub-good"></span>}
+                              { goodItem.orderNum > 0 && <span className="sub-good" onClick={() => this.subGood(index, goodIndex)}></span>}
                             </div>
                           </div>
                         </li>
