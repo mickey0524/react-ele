@@ -183,6 +183,9 @@
       top: -.5rem;
       left: .6rem;
       .car-img {
+        &.jitter {
+          animation: jitter .3s;
+        }
         position: absolute;
         width: 1.6rem;
         height: 1.6rem;
@@ -330,4 +333,30 @@
       }
     }
   }
+  .animated-ball {
+    position: absolute;
+    width: .8rem;
+    height: .8rem;
+    background: #3190e8;
+    border-radius: 50%;
+    transition: left .6s linear, top .6s cubic-bezier(0.5, -0.5, 1, 1);
+    &.animation {
+      left: 1.2rem!important;
+      top: 26rem!important;
+    }
+  }
+}
+
+@keyframes jitter
+{
+  0% { transform: scale(1); }
+  33% { transform: scale(1.2); }
+  66% {transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+@-webkit-keyframes jitter {
+  0% { transform: scale(1); }
+  33% { transform: scale(1.2); }
+  66% {transform: scale(0.8); }
+  100% { transform: scale(1); }
 }

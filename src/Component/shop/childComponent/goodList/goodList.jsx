@@ -63,7 +63,8 @@ class Main extends Component {
       this.refs.mask.classList.toggle('active');
       this.refs.carDetail.classList.toggle('active');
     }
-    this.addGood = (index, goodIndex) => {
+    this.addGood = (index, goodIndex, ev) => {
+      this.animateBall(ev);
       let data = this.state.data;
       data.varietyList[index].orderNum += 1;
       data.varietyList[index].goodList[goodIndex].orderNum += 1;
@@ -145,12 +146,29 @@ class Main extends Component {
       carList = [];
       this.refs.mask.remove('active');
       this.refs.carDetail.remove('active');
+      this.refs.carImg.remove('active');
+      this.refs.
       this.setState({
         data,
         carList,
         consumption: 0.00,
         payText: this.getPayText(0.00)
       })
+    }
+    this.animateBall = (ev) => {
+      let ball = document.createElement('span');
+      ball.className = 'animated-ball';
+      ball.style.left = (ev.pageX - 10) + 'px';
+      ball.style.top = (ev.pageY - 10) + 'px';
+      setTimeout(() => {
+        ball.classList.add('animation');
+      }, 50);
+      this.refs.goodList.appendChild(ball);
+      this.refs.carImg.classList.remove('jitter');
+      setTimeout(() => {
+        this.refs.carImg.classList.add('jitter');
+        this.refs.goodList.removeChild(ball);
+      }, 800);
     }
     this.getPayText = (price) => {
       if (price == 0.00) {
@@ -171,7 +189,7 @@ class Main extends Component {
 
   render() {
     return (
-      <div id="goodList">
+      <div id="goodList" ref="goodList">
         <div className="good-variety">
           <ul>
           {
@@ -211,7 +229,7 @@ class Main extends Component {
                             <div className="good-price">
                               <span className="now-price">¥{goodItem.nowPrice}</span>
                               { goodItem.oriPrice && <del>¥{goodItem.oriPrice}</del> }
-                              <span className="add-good" onClick={() => this.addGood(index, goodIndex)}></span>
+                              <span className="add-good" onClick={(ev) => this.addGood(index, goodIndex, ev)}></span>
                               { goodItem.orderNum > 0 && <span className="order-num">{ goodItem.orderNum }</span>}
                               { goodItem.orderNum > 0 && <span className="sub-good" onClick={() => this.subGood(index, goodIndex)}></span>}
                             </div>
