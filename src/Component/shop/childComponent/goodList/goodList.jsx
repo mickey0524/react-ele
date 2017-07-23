@@ -135,6 +135,23 @@ class Main extends Component {
         carList
       });
     }
+    this.clearCar = () => {
+      let carList = this.state.carList;
+      let data = this.state.data;
+      carList.forEach((item) => {
+        data.varietyList[item.index].orderNum = 0;
+        data.varietyList[item.index].goodList[item.goodIndex].orderNum = 0;
+      });
+      carList = [];
+      this.refs.mask.remove('active');
+      this.refs.carDetail.remove('active');
+      this.setState({
+        data,
+        carList,
+        consumption: 0.00,
+        payText: this.getPayText(0.00)
+      })
+    }
     this.getPayText = (price) => {
       if (price == 0.00) {
         this.refs.buyIcon.classList.remove('active');
@@ -224,7 +241,7 @@ class Main extends Component {
         </div>
         <div className="mask" ref="mask" onClick={this.showShoppingCar}></div>
         <div className="car-detail" ref="carDetail">
-          <div className="top-bar">
+          <div className="top-bar" onClick={this.clearCar}>
             <span>购物车</span>
             <div className="clear">
               <span></span>
@@ -241,7 +258,7 @@ class Main extends Component {
                     <span>¥{item.price}</span>
                     <div className="add-sub">
                       <span className="img" onClick={() => this.subGood(item.index, item.goodIndex, 'shoppingCar')}></span>
-                      <span>{item.num}</span>
+                      <span className="order-num">{item.num}</span>
                       <span className="img" onClick={() => this.addGood(item.index, item.goodIndex)}></span>
                     </div>
                   </li>
