@@ -144,10 +144,9 @@ class Main extends Component {
         data.varietyList[item.index].goodList[item.goodIndex].orderNum = 0;
       });
       carList = [];
-      this.refs.mask.remove('active');
-      this.refs.carDetail.remove('active');
-      this.refs.carImg.remove('active');
-      this.refs.
+      this.refs.mask.classList.remove('active');
+      this.refs.carDetail.classList.remove('active');
+      this.refs.carImg.classList.remove('active');
       this.setState({
         data,
         carList,
