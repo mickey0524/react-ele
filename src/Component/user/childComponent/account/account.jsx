@@ -2,12 +2,17 @@ import React, { Component, PropTypes } from 'react';
 import template from '../../../common/template';
 import data from './mockData.json';
 import TopBar from '../../../common/topBar/topBar';
+import { browserHistory, hashHistory } from 'react-router';
 import './account.less';
 
 class Main extends Component {
 
   constructor(props) {
     super(props);
+    this.setUserName = () => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/user/setUserName');
+    }
   }
 
   render() {
@@ -20,7 +25,7 @@ class Main extends Component {
               头像
               <img src={data.avatar} />
             </div>
-            <div className="user-name">
+            <div className="user-name" onClick={this.setUserName}>
               用户名
               <span>{data.userName} ></span>
             </div>
