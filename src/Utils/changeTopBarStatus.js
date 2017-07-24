@@ -27,6 +27,9 @@ const changeTopBarStatus = (path) => {
   else if (path === '/user/setUserName') {
     topBar.middle = '修改用户名';
   }
+  else if (path === '/user/address') {
+    topBar.middle = '编辑地址';
+  }
   return topBar;
 }
 

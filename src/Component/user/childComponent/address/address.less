@@ -1,0 +1,49 @@
+html, body {
+  height: 100%;
+}
+body {
+  background: #F2F2F2;
+}
+#address {
+  font-size: .6rem;
+  .address-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1.95rem;
+  }
+  .address-list {
+    margin: 0.4rem 0;
+    li {
+      border-top: 0.025rem solid #D9D9D9;
+      padding: .4rem;
+      background: #FFF;
+      position: relative;
+      &:last-of-type {
+        border-bottom: 0.025rem solid #D9D9D9;
+      }
+      &.active {
+        background: #FFF8C3;
+      }
+      span {
+        position: absolute;
+        color: #999;
+        right: .4rem;
+        top: .9rem;
+      }
+    }
+  }
+  .add-address {
+    background: #FFF;
+    border-top: 0.025rem solid #D9D9D9;
+    border-bottom: 0.025rem solid #D9D9D9;
+    line-height: 1.8rem;
+    padding-left: .4rem;
+    font-size: .7rem;
+    span:last-of-type {
+      float: right;
+      margin-right: .4rem;
+      color: #D8D8D8;
+    }
+  }
+}

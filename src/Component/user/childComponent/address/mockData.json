@@ -1,0 +1,14 @@
+module.exports = {
+  "addressList": [
+    {
+      "address": "北京邮电大学",
+      "phoneNum" : "12312312312",
+      "isActive": true
+    },
+    {
+      "address": "双榆树北路",
+      "phoneNum": "11111111111",
+      "isActive": false
+    }
+  ]
+}
