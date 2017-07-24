@@ -21,6 +21,9 @@ const changeTopBarStatus = (path) => {
   else if (path === 'shopDetail') {
     topBar.middle = '商家详情';
   }
+  else if (path === 'account') {
+    topBar.middle = '账户信息';
+  }
   return topBar;
 }
 

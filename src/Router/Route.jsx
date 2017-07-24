@@ -61,6 +61,12 @@ const goodList = (location, cb) => {
   }, 'goodList')
 }
 
+const account = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/account/account').default)
+  }, 'account')
+}
+
 const RouteConfig = (
   <Router history={history}>
     <Route path="/" component={Roots}>
@@ -74,6 +80,7 @@ const RouteConfig = (
         <Route path="/shop/activityDetail" getComponent={ac} />
         <Route path="/shop/shopDetail" getComponent={shopDetail} />
       </Route>
+      <Route path="account" getComponent={account} />
     </Route>
     <Redirect from='*' to='/' />
   </Router>

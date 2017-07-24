@@ -80,6 +80,6 @@ module.exports = {
         new webpack.NoErrorsPlugin()
     ],
     resolve: {
-        extensions: ['', '.js', '.jsx', '.less', '.scss', '.css'], //后缀名自动补全
+        extensions: ['', '.js', '.jsx', '.less', '.scss', '.css', 'json'], //后缀名自动补全
     }
 };

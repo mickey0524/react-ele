@@ -1,0 +1,96 @@
+html, body {
+  height: 100%;
+}
+body {
+  background: #F2F2F2;
+}
+#account {
+  .account-container {
+    position: absolute;
+    top: 1.95rem;
+    left: 0;
+    right: 0;
+    .user-mes {
+      margin-top: .5rem;
+      background: #FFF;
+      border-top: 0.025rem solid #DDD;
+      border-bottom: 0.025rem solid #DDD;
+      div {
+        border-bottom: 0.025rem solid #DDD;
+        padding-left: .5rem;
+        font-size: .6rem;
+        &:last-of-type {
+          border-bottom: 0;
+        }
+      }
+      .user-avatar {
+        line-height: 3rem;
+        position: relative;
+        img {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          position: absolute;
+          right: .8rem;
+          top: .5rem;
+        }
+      }
+      .user-name, .address {
+        line-height: 1.8rem;
+        span {
+          float: right;
+          margin-right: .8rem;
+          color: #999;
+        }
+      }
+    }
+  }
+  .bind-account, .security-settings {
+    font-size: .6rem;
+    p {
+      color: #8B8B8B;
+      padding-left: .5rem;
+      line-height: 1.6rem;
+    }
+    div {
+      padding-left: .5rem;
+      background: #FFF;
+      line-height: 1.8rem;
+      border-top: 0.025rem solid #DDD;
+      border-bottom: 0.025rem solid #DDD;
+      span:last-of-type {
+        float: right;
+        margin-right: .8rem;
+        color: #999;
+      }
+    }
+  }
+  .bind-account {
+    div {
+      position: relative;
+      span:first-of-type {
+        position: absolute;
+        top: .4rem;
+        background: 0 0 no-repeat;
+        background-size: 100%;
+        background-image: url("../../images/phone-blue.png");
+        width: 1rem;
+        height: 1rem;
+      }
+      span:nth-of-type(2) {
+        margin-left: 1.3rem;
+      }
+    }
+  }
+  .login-out {
+    font-size: .6rem;
+    line-height: 1.6rem;
+    margin: 2rem .4rem 0;
+    background: #D8584A;
+    color: #FFF;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    border-radius: 0.2rem;
+  }
+}

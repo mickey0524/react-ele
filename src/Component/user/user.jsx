@@ -4,6 +4,7 @@ import TopBar from '../common/topBar/topBar';
 import BottomBar from '../common/bottomBar/bottomBar';
 import Interval from '../common/interval/interval';
 import mockData from './mockData.json';
+import { browserHistory, hashHistory } from 'react-router';
 import './user.less';
 
 class Main extends Component {
@@ -12,6 +13,10 @@ class Main extends Component {
     super(props);
     this.state = {
       userMes: mockData
+    }
+    this.toOrder = () => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/order');
     }
   }
 
@@ -52,7 +57,7 @@ class Main extends Component {
           </div>
           <Interval></Interval>
           <div className="ele-market">
-            <div className="user-order"><span></span><span>我的订单</span><span>></span></div>
+            <div className="user-order" onClick={this.toOrder}><span></span><span>我的订单</span><span>></span></div>
             <div className="integral-market"><span></span><span>积分商城</span><span>></span></div>
             <div className="ele-member"><span></span><span>饿了么会员卡</span><span>></span></div>
           </div>
