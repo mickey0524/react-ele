@@ -31,6 +31,18 @@ const user = (location, cb) => {
   }, 'user')
 }
 
+const userIndex = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/user/childComponent/userIndex/userIndex').default)
+  }, 'userIndex')
+}
+
+const account = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/user/childComponent/account/account').default)
+  }, 'account')
+}
+
 const shop = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../Component/shop/shop').default)
@@ -61,12 +73,6 @@ const goodList = (location, cb) => {
   }, 'goodList')
 }
 
-const account = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/account/account').default)
-  }, 'account')
-}
-
 const RouteConfig = (
   <Router history={history}>
     <Route path="/" component={Roots}>
@@ -74,7 +80,10 @@ const RouteConfig = (
       <Route path="takeaway" component={takeaway} />
       <Route path="search" getComponent={search} />
       <Route path="order" getComponent={order} />
-      <Route path="user" getComponent={user} />
+      <Route path="user" getComponent={user}>
+        <IndexRoute getComponent={userIndex} />
+        <Route path="/user/account" getComponent={account} />
+      </Route>
       <Route path="shop" getComponent={shop}>
         <IndexRoute getComponent={shopIndex} />
         <Route path="/shop/activityDetail" getComponent={ac} />

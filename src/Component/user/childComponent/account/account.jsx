@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import template from '../common/template';
+import template from '../../../common/template';
 import data from './mockData.json';
-import TopBar from '../common/topBar/topBar';
+import TopBar from '../../../common/topBar/topBar';
 import './account.less';
 
 class Main extends Component {
