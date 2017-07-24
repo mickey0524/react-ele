@@ -1,6 +1,8 @@
 import React, {Component, PropType} from 'react';
 import template from '../../../common/template';
 import data from './mockData.json';
+import Layzr from 'layzr.js';
+import placeholder from '../../../../images/placeholder-img.png';
 import './goodList.less';
 
 class Main extends Component {
@@ -184,8 +186,19 @@ class Main extends Component {
         return `还差¥${money}元起送`;
       }
     }
+    this.layzr = () => {
+      const layzrInstance = Layzr();
+      layzrInstance
+        .update()
+        .check();
+    }
   }
-
+  componentDidMount() {
+    this.layzr();
+    this.refs.goods.addEventListener('scroll', () => {
+      this.layzr();
+    });
+  }
   render() {
     return (
       <div id="goodList" ref="goodList">
@@ -219,7 +232,7 @@ class Main extends Component {
                       return (
                         <li key={goodIndex}>
                           <div className="good-avatar">
-                            <img src={goodItem.avatar} />
+                            <img src={placeholder} data-normal={goodItem.avatar} />
                           </div>
                           <div className="good-mes">
                             <p className="good-name">{goodItem.name}</p>
