@@ -13,6 +13,10 @@ class Main extends Component {
       const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
       history.push('/user/setUserName');
     }
+    this.toAddress = () => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/user/address');
+    }
   }
 
   render() {
@@ -29,7 +33,7 @@ class Main extends Component {
               用户名
               <span>{data.userName} ></span>
             </div>
-            <div className="address">
+            <div className="address" onClick={this.toAddress}>
               收货地址
               <span>></span>
             </div>

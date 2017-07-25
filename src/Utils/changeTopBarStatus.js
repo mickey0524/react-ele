@@ -30,6 +30,9 @@ const changeTopBarStatus = (path) => {
   else if (path === '/user/address') {
     topBar.middle = '编辑地址';
   }
+  else if (path === '/user/addAddress') {
+    topBar.middle = '新增地址';
+  }
   return topBar;
 }
 

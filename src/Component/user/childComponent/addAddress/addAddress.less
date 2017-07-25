@@ -1,0 +1,58 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #F2F2F2;
+}
+
+#addAddress {
+  .addAddress-container {
+    position: absolute;
+    top: 2.4rem;
+    left: 0;
+    right: 0;
+    .input-group {
+      background: #FFF;
+      .input-new {
+        width: 100%;
+        padding-top: .4rem;
+        &:last-of-type {
+          padding-bottom: .4rem;
+        }
+        input {
+          display: block;
+          width: 14rem;
+          font-size: .6rem;
+          margin: 0 auto;
+          padding: .3rem;
+          background: #F2F2F2;
+          border: 1px solid #DDD;
+          border-radius: 3px;
+          &.error {
+            border-color: #EA1306;
+          }
+        }
+        p {
+          display: none;
+          font-size: 0.4rem;
+          color: #EA1306;
+          padding-left: .6rem;
+          margin-top: .2rem;
+        }
+      }
+    }
+    .submit-button {
+      margin: .5rem;
+      text-align: center;
+      background-color: #4CD964;
+      color: #B7F0C1;
+      line-height: 1.8rem;
+      font-size: .6rem;
+      border-radius: 3px;
+      &.active {
+        color: #FFF;
+      }
+    }
+  }
+}
