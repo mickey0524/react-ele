@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../../../common/template';
 import TopBar from '../../../common/topBar/topBar';
+import { browserHistory, hashHistory } from 'react-router';
 import data from './mockData.json';
 import './address.less';
 
@@ -26,6 +27,10 @@ class Main extends Component {
       data.splice(index, 1);
       this.setState({data});
     }
+    this.addAddress = () => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/user/addAddress');
+    }
   }
 
   render() {
@@ -46,7 +51,7 @@ class Main extends Component {
             })
           }
           </ul>
-          <div className="add-address">
+          <div className="add-address" onClick={this.addAddress}>
             <span>新增地址</span>
             <span>></span>
           </div>

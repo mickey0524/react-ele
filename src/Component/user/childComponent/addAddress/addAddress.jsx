@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../../../common/template';
 import TopBar from '../../../common/topBar/topBar';
+import Prompt from '../../../common/prompt/prompt';
 import './addAddress.less';
 
 class Main extends Component {
@@ -64,7 +65,7 @@ class Main extends Component {
 
       }
       else {
-        alert('asd');
+        this.props.changePromptContent({ isShow: true, content: '请完善所有信息'});
       }
     }
   }
@@ -73,6 +74,7 @@ class Main extends Component {
     return(
       <div id="addAddress">
         <TopBar route={this.props.route}></TopBar>
+        { this.props.promptContent.isShow && <Prompt></Prompt> }
         <div className="addAddress-container">
           <div className="input-group">
             <div className="input-new">

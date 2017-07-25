@@ -1,4 +1,4 @@
-import {CHANGE_BOTTOM_BAR, CHANGE_TOP_BAR, CHANGE_SHOP_LIST} from '../Action/Index'
+import {CHANGE_BOTTOM_BAR, CHANGE_TOP_BAR, CHANGE_SHOP_LIST, CHANGE_PROMPT_CONTENT} from '../Action/Index'
 
 
 export const bottomChoose = (state = 'takeaway', action = {}) => {
@@ -27,6 +27,17 @@ export const shopList = (state = [], action = {}) => {
   switch(action.type) {
     case CHANGE_SHOP_LIST:
       return action.shopList;
+    default:
+      return state;
+  }
+}
+
+const initPrompt = { isShow: false, content: '地址信息错误' };
+export const promptContent = (state = initPrompt, action = {}) => {
+  switch(action.type) {
+    case CHANGE_PROMPT_CONTENT:
+      var newState = Object.assign({}, state, action.promptContent);
+      return newState;
     default:
       return state;
   }

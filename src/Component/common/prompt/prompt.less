@@ -1,0 +1,71 @@
+#prompt {
+  z-index: 100;
+  position: absolute;
+  width: 12rem;
+  height: 8rem;
+  background: #FFF;
+  margin-left: 2rem;
+  margin-top: 8rem;
+  border-radius: .3rem;
+  animation: jitter .3s;
+  .prompt-icon {
+    width: 2.7rem;
+    height: 2.7rem;
+    border: .16rem solid #F8Cb86;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: .8rem;
+    span {
+      background: #F8Cb86;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+    }
+    span:first-of-type {
+      width: .15rem;
+      height: 1.5rem;
+      margin-top: .4rem;
+    }
+    span:last-of-type {
+      width: .2rem;
+      height: .2rem;
+      border-radius: 50%;
+      margin-top: .2rem;
+    }
+  }
+  p {
+    position: absolute;
+    bottom: 2.4rem;
+    width: 100%;
+    text-align: center;
+    font-size: .7rem;
+    color: #333;
+  }
+  .submit-button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+    line-height: 1.8rem;
+    font-size: .7rem;
+    background: #4CD964;
+    border-bottom-right-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+  }
+}
+
+@keyframes jitter
+{
+  0% { transform: scale(1); }
+  33% { transform: scale(1.2); }
+  66% {transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+@-webkit-keyframes jitter {
+  0% { transform: scale(1); }
+  33% { transform: scale(1.2); }
+  66% {transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
