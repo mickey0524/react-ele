@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import template from '../../../common/template';
 import TopBar from '../../../common/topBar/topBar';
 import Prompt from '../../../common/prompt/prompt';
+import { browserHistory, hashHistory } from 'react-router';
 import './addAddress.less';
 
 class Main extends Component {
@@ -11,12 +12,14 @@ class Main extends Component {
       isButtonActive: false
     }
     this.rightInput = [];
+    this.addressObj = {};
     this.dealInput = (ev, variety) => {
       let value = ev.target.value;
       let threshold = variety === 'name' ? 0 : 2;
       if (value.length > threshold) {
         if (this.rightInput.indexOf(variety) == -1) {
           this.rightInput.push(variety);
+          this.addressObj[variety] = value;
           ev.target.classList.remove('error');
           ev.target.nextElementSibling.style.display = 'none';
           this.judgeRight();
@@ -37,6 +40,7 @@ class Main extends Component {
       if (pattern.test(value)) {
         if (this.rightInput.indexOf('phone') == -1) {
           this.rightInput.push('phone');
+          this.addressObj.phone = value;
           ev.target.classList.remove('error');
           ev.target.nextElementSibling.style.display = 'none';
           this.judgeRight();
@@ -62,7 +66,13 @@ class Main extends Component {
     this.addAddress = (ev) => {
       let target = ev.target;
       if (target.classList.contains('active')) {
-
+        let obj = {};
+        obj.address = this.addressObj.address + ' ' + this.addressObj.detailAddress;
+        obj.phoneNum = this.addressObj.phone;
+        obj.isActive = false;
+        this.props.addAddress(obj);
+        const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+        history.push('/user/address');
       }
       else {
         this.props.changePromptContent({ isShow: true, content: '请完善所有信息'});

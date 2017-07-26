@@ -1,4 +1,5 @@
 import {CHANGE_BOTTOM_BAR, CHANGE_TOP_BAR, CHANGE_SHOP_LIST, CHANGE_PROMPT_CONTENT} from '../Action/Index'
+import {ADD_ADDRESS, DEL_ADDRESS, CHANGE_ADDRESS} from '../Action/Index';
 
 
 export const bottomChoose = (state = 'takeaway', action = {}) => {
@@ -42,4 +43,41 @@ export const promptContent = (state = initPrompt, action = {}) => {
       return state;
   }
 }
+
+const initAddress = [{ address: "北京邮电大学", phoneNum : "12312312312", isActive: true }, { address: "双榆树", phoneNum: "123123123", isActive: false }];
+export const addressList = (state = initAddress, action = {}) => {
+  switch(action.type) {
+    case ADD_ADDRESS:
+      var newState = state.slice();
+      newState.push(action.address);
+      return newState;
+    case DEL_ADDRESS:
+      var newState = state.slice();
+      if (newState.length > 1) {
+        newState[(action.index + 1) % newState.length].isActive = true;
+      }
+      newState.splice(action.index, 1);
+      return newState;
+    case CHANGE_ADDRESS:
+      var newState = [];
+      state.forEach((item) => {
+        newState.push({
+          address: item.address,
+          phoneNum: item.phoneNum,
+          isActive: item.isActive
+        });
+      });
+      for (let i = 0, len = newState.length; i < len; i++) {
+        if (newState[i].isActive) {
+          newState[i].isActive = false;
+          break;
+        }
+      }
+      newState[action.index].isActive = true;
+      return newState;
+    default:
+      return state;
+  }
+}
+
 

@@ -2,37 +2,25 @@ import React, { Component, PropTypes } from 'react';
 import template from '../../../common/template';
 import TopBar from '../../../common/topBar/topBar';
 import { browserHistory, hashHistory } from 'react-router';
-import data from './mockData.json';
 import './address.less';
 
 class Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: data.addressList
-    }
-    this.changeAddress = (index) => {
-      let data = this.state.data;
-      data.forEach((item) => {
-        item.isActive = false;
-      })
-      data[index].isActive = true;
-      this.setState({data});
+    this.changeAddress = (ev, index) => {
+      if (ev.target.nodeName == 'SPAN') {
+        return false;
+      }
+      this.props.changeAddress(index);
     }
     this.delAddress = (ev, index) => {
-      let data = this.state.data;
-      if (data[index].isActive && data.length > 1) {
-        data[(index + 1) % data.length].isActive = true;
-      }
-      data.splice(index, 1);
-      this.setState({data});
+      this.props.delAddress(index);
     }
     this.addAddress = () => {
       const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
       history.push('/user/addAddress');
     }
   }
-
   render() {
     return(
       <div id="address">
@@ -40,9 +28,9 @@ class Main extends Component {
         <div className="address-container">
           <ul className="address-list" ref="addressList">
           {
-            this.state.data.map((item, index) => {
+            this.props.addressList.map((item, index) => {
               return(
-                <li key={index} className={ item.isActive ? 'active' : '' } onClick={() => this.changeAddress(index)}>
+                <li key={index} className={ item.isActive ? 'active' : '' } onClick={(ev) => this.changeAddress(ev, index)}>
                   <p>{item.address}</p>
                   <p>{item.phoneNum}</p>
                   <span onClick={(ev) => this.delAddress(ev, index)}>X</span>
