@@ -31,7 +31,7 @@ class Main extends Component {
             </div>
             <div className="user-name" onClick={this.setUserName}>
               用户名
-              <span>{data.userName} ></span>
+              <span>{this.props.userMes.userName} ></span>
             </div>
             <div className="address" onClick={this.toAddress}>
               收货地址

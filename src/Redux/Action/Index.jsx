@@ -6,6 +6,7 @@ export const CHANGE_PROMPT_CONTENT = 'CHANGE_PROMPT_CONTENT';
 export const ADD_ADDRESS = 'ADD_ADDRESS';
 export const DEL_ADDRESS = 'DEL_ADDRESS';
 export const CHANGE_ADDRESS = 'CHANGE_ADDRESS';
+export const CHANGE_USER_MES = 'CHANGE_USER_MES';
 
 export const changeBottomBar = (bottomChoose) => {
   return {
@@ -53,5 +54,12 @@ export const changeAddress = (index) => {
   return {
     type: CHANGE_ADDRESS,
     index
+  }
+}
+
+export const changeUserMes = (userMes) => {
+  return {
+    type: CHANGE_USER_MES,
+    userMes
   }
 }

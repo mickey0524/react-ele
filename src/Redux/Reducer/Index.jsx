@@ -1,5 +1,5 @@
 import {CHANGE_BOTTOM_BAR, CHANGE_TOP_BAR, CHANGE_SHOP_LIST, CHANGE_PROMPT_CONTENT} from '../Action/Index'
-import {ADD_ADDRESS, DEL_ADDRESS, CHANGE_ADDRESS} from '../Action/Index';
+import {ADD_ADDRESS, DEL_ADDRESS, CHANGE_ADDRESS, CHANGE_USER_MES} from '../Action/Index';
 
 
 export const bottomChoose = (state = 'takeaway', action = {}) => {
@@ -74,6 +74,17 @@ export const addressList = (state = initAddress, action = {}) => {
         }
       }
       newState[action.index].isActive = true;
+      return newState;
+    default:
+      return state;
+  }
+}
+
+const initUserMes = { userName: 'baihao0524', password: 'baihao0524' };
+export const userMes = (state = initUserMes, action = {}) => {
+  switch(action.type) {
+    case CHANGE_USER_MES:
+      var newState = Object.assign({}, state, action.userMes);
       return newState;
     default:
       return state;

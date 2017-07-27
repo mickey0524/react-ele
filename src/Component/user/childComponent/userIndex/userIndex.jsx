@@ -34,7 +34,7 @@ class Main extends Component {
               <img src={mockData.userAvatar} />
             </div>
             <div className="name-num">
-              <p>{ mockData.userName }</p>
+              <p>{ this.props.userMes.userName }</p>
               {
                 mockData.phoneNum.length === 0 ? (
                   <p><span></span>暂无绑定手机号</p>
