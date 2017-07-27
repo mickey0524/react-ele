@@ -33,6 +33,9 @@ const changeTopBarStatus = (path) => {
   else if (path === '/user/addAddress') {
     topBar.middle = '新增地址';
   }
+  else if (path === '/user/changePassword') {
+    topBar.middle = '重置密码';
+  }
   return topBar;
 }
 

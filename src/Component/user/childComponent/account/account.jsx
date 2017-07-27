@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import template from '../../../common/template';
 import data from './mockData.json';
 import TopBar from '../../../common/topBar/topBar';
+import Prompt from '../../../common/prompt/prompt';
 import { browserHistory, hashHistory } from 'react-router';
 import './account.less';
 
@@ -17,12 +18,20 @@ class Main extends Component {
       const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
       history.push('/user/address');
     }
+    this.bindPhone = () => {
+      this.props.changePromptContent({ isShow: true, content: '请在手机APP中设置' });
+    }
+    this.changePassword = () => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/user/changePassword');
+    }
   }
 
   render() {
     return (
       <div id="account">
         <TopBar route={this.props.route}></TopBar>
+        { this.props.promptContent.isShow && <Prompt></Prompt> }
         <div className="account-container">
           <div className="user-mes">
             <div className="user-avatar">
@@ -40,7 +49,7 @@ class Main extends Component {
           </div>
           <div className="bind-account">
             <p>账号绑定</p>
-            <div>
+            <div onClick={this.bindPhone}>
               <span></span>
               <span>手机</span>
               <span>></span>
@@ -48,7 +57,7 @@ class Main extends Component {
           </div>
           <div className="security-settings">
             <p>安全设置</p>
-            <div>
+            <div onClick={this.changePassword}>
               <span>登录密码</span>
               <span>修改 ></span>
             </div>

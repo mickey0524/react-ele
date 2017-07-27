@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import template from '../../../common/template';
 import TopBar from '../../../common/topBar/topBar';
 import Prompt from '../../../common/prompt/prompt';
+import { browserHistory, hashHistory } from 'react-router';
 import './setUserName.less';
 
 class Main extends Component {
@@ -14,6 +15,8 @@ class Main extends Component {
       }
       else {
         this.props.changeUserMes({ userName: value, password: this.props.userMes.password });
+        const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+        history.push('/user/account');
       }
     }
   }

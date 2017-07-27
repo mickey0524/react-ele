@@ -61,6 +61,12 @@ const addAddress = (location, cb) => {
   }, 'addAddress')
 }
 
+const changePassword = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/user/childComponent/changePassword/changePassword').default)
+  }, 'changePassword')
+}
+
 const shop = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../Component/shop/shop').default)
@@ -104,6 +110,7 @@ const RouteConfig = (
         <Route path="/user/setUserName" getComponent={setUserName} />
         <Route path="/user/address" getComponent={address} />
         <Route path="/user/addAddress" getComponent={addAddress} />
+        <Route path="/user/changePassword" getComponent={changePassword} />
       </Route>
       <Route path="shop" getComponent={shop}>
         <IndexRoute getComponent={shopIndex} />
