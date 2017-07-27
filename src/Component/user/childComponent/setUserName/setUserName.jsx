@@ -9,7 +9,7 @@ class Main extends Component {
     super(props);
     this.submit = () => {
       let value = this.refs.userName.value;
-      if (value < 5) {
+      if (value.length < 5) {
         this.props.changePromptContent({ isShow: true, content: '用户名为5-24字符之间'});
       }
       else {
@@ -21,6 +21,7 @@ class Main extends Component {
     return(
       <div id="setUserName">
         <TopBar route={this.props.route}></TopBar>
+        { this.props.promptContent.isShow && <Prompt></Prompt> }
         <div className="container">
           <input type="text" placeholder="输入用户名" minLength="5" maxLength="24" autoFocus="autoFocus" ref="userName" />
           <p>用户名长度应在5-24字符之间</p>
