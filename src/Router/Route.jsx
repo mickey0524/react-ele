@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import { Router, Route, Redirect, IndexRoute, browserHistory, hashHistory } from 'react-router';
+import { shop, shopIndex, ac, shopDetail } from './shop.jsx';
+import { user, userIndex, account, setUserName, address, addAddress, changePassword} from './user.jsx';
 
 import takeaway from '../Component/takeaway/takeaway'; //销售录入
 
@@ -25,78 +27,6 @@ const order = (location, cb) => {
   }, 'order')
 }
 
-const user = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/user/user').default)
-  }, 'user')
-}
-
-const userIndex = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/user/childComponent/userIndex/userIndex').default)
-  }, 'userIndex')
-}
-
-const account = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/user/childComponent/account/account').default)
-  }, 'account')
-}
-
-const setUserName = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/user/childComponent/setUserName/setUserName').default)
-  }, 'setUserName')
-}
-
-const address = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/user/childComponent/address/address').default)
-  }, 'address')
-}
-
-const addAddress = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/user/childComponent/addAddress/addAddress').default)
-  }, 'addAddress')
-}
-
-const changePassword = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/user/childComponent/changePassword/changePassword').default)
-  }, 'changePassword')
-}
-
-const shop = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/shop/shop').default)
-  }, 'shop')
-}
-
-const ac = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/shop/childComponent/activityDetail/activityDetail').default)
-  }, 'ac')
-}
-
-const shopDetail = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/shop/childComponent/shopDetail/shopDetail').default)
-  }, 'shopDetail')
-}
-
-const shopIndex = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/shop/childComponent/shopIndex/shopIndex').default)
-  }, 'shopIndex')
-}
-
-const goodList = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/shop/childComponent/goodList/goodList').default)
-  }, 'goodList')
-}
-
 const RouteConfig = (
   <Router history={history}>
     <Route path="/" component={Roots}>
@@ -117,7 +47,6 @@ const RouteConfig = (
         <Route path="/shop/activityDetail" getComponent={ac} />
         <Route path="/shop/shopDetail" getComponent={shopDetail} />
       </Route>
-      <Route path="account" getComponent={account} />
     </Route>
     <Redirect from='*' to='/' />
   </Router>
