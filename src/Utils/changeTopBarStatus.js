@@ -39,6 +39,9 @@ const changeTopBarStatus = (path) => {
   else if (path === '/user/balance') {
     topBar.middle = '我的余额';
   }
+  else if (path === '/user/giftMoney') {
+    topBar.middle = '我的优惠';
+  }
   return topBar;
 }
 

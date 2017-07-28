@@ -1,0 +1,29 @@
+module.exports = {
+  "giftList": [
+    {
+      "yuan": "2",
+      "jiao": "0",
+      "threshold": "20",
+      "maturity": "2017-05-23",
+      "phone": "13681711254",
+      "day": "3"
+    },
+    {
+      "yuan": "2",
+      "jiao": "0",
+      "threshold": "20",
+      "maturity": "2017-05-23",
+      "phone": "13681711254",
+      "day": "3"
+    },
+    {
+      "yuan": "2",
+      "jiao": "0",
+      "threshold": "20",
+      "maturity": "2017-05-23",
+      "phone": "13681711254",
+      "day": "3",
+      "limit": "限品类：快餐便当、特色菜系、小吃夜宵、甜品饮品、异国料理"
+    }
+  ]
+}
