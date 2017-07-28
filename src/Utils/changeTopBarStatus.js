@@ -36,6 +36,9 @@ const changeTopBarStatus = (path) => {
   else if (path === '/user/changePassword') {
     topBar.middle = '重置密码';
   }
+  else if (path === '/user/balance') {
+    topBar.middle = '我的余额';
+  }
   return topBar;
 }
 

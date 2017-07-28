@@ -39,3 +39,9 @@ export const changePassword = (location, cb) => {
     cb(null, require('../Component/user/childComponent/changePassword/changePassword').default)
   }, 'changePassword')
 }
+
+export const balance = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/user/childComponent/balance/balance').default)
+  }, 'balance')
+}
