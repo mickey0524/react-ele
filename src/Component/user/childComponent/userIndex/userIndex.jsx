@@ -14,13 +14,18 @@ class Main extends Component {
     this.state = {
       userMes: mockData
     }
+    this.history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
     this.toOrder = () => {
-      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
-      history.push('/order');
+      this.history.push('/order');
     }
     this.toAccount = () => {
-      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
-      history.push('/user/account');
+      this.history.push('/user/account');
+    }
+    this.toBalance = () => {
+      this.history.push('/user/balance');
+    }
+    this.toGiftMoney = () => {
+      this.history.push('/user/giftMoney');
     }
   }
 
@@ -46,11 +51,11 @@ class Main extends Component {
             <span>></span>
           </div>
           <div className="user-fraction">
-            <div className="user-balance">
+            <div className="user-balance" onClick={this.toBalance}>
               <p><span>{ mockData.balance }</span>元</p>
               <p>我的余额</p>
             </div>
-            <div className="user-offer">
+            <div className="user-offer" onClick={this.toGiftMoney}>
               <p><span>{ mockData.offer }</span>个</p>
               <p>我的优惠</p>
             </div>
