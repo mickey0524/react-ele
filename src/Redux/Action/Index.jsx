@@ -7,6 +7,7 @@ export const ADD_ADDRESS = 'ADD_ADDRESS';
 export const DEL_ADDRESS = 'DEL_ADDRESS';
 export const CHANGE_ADDRESS = 'CHANGE_ADDRESS';
 export const CHANGE_USER_MES = 'CHANGE_USER_MES';
+export const CHANGE_QUESTION_MES = 'CHANGE_QUESTION_MES';
 
 export const changeBottomBar = (bottomChoose) => {
   return {
@@ -61,5 +62,12 @@ export const changeUserMes = (userMes) => {
   return {
     type: CHANGE_USER_MES,
     userMes
+  }
+}
+
+export const changeQuestionMes = (questionMes) => {
+  return {
+    type: CHANGE_QUESTION_MES,
+    questionMes
   }
 }
