@@ -42,6 +42,9 @@ const changeTopBarStatus = (path) => {
   else if (path === '/user/giftMoney') {
     topBar.middle = '我的优惠';
   }
+  else if (path === '/user/integral') {
+    topBar.middle = '我的积分';
+  }
   return topBar;
 }
 

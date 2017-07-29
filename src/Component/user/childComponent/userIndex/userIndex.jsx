@@ -27,6 +27,9 @@ class Main extends Component {
     this.toGiftMoney = () => {
       this.history.push('/user/giftMoney');
     }
+    this.toIntegral = () => {
+      this.history.push('/user/integral');
+    }
   }
 
   render() {
@@ -59,7 +62,7 @@ class Main extends Component {
               <p><span>{ mockData.offer }</span>个</p>
               <p>我的优惠</p>
             </div>
-            <div className="user-integral">
+            <div className="user-integral" onClick={this.toIntegral}>
               <p><span>{ mockData.integral }</span>分</p>
               <p>我的积分</p>
             </div>

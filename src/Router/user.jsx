@@ -51,3 +51,9 @@ export const giftMoney = (location, cb) => {
     cb(null, require('../Component/user/childComponent/giftMoney/giftMoney').default)
   }, 'giftMoney')
 }
+
+export const integral = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/user/childComponent/integral/integral').default)
+  }, 'integral')
+}
