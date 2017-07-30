@@ -45,6 +45,9 @@ const changeTopBarStatus = (path) => {
   else if (path === '/user/integral') {
     topBar.middle = '我的积分';
   }
+  else if (path === '/user/memberCard') {
+    topBar.middle = '会员中心';
+  }
   return topBar;
 }
 

@@ -3,6 +3,7 @@ import template from '../../../common/template';
 import TopBar from '../../../common/topBar/topBar';
 import BottomBar from '../../../common/bottomBar/bottomBar';
 import Interval from '../../../common/interval/interval';
+import Prompt from '../../../common/prompt/prompt';
 import mockData from './mockData.json';
 import { browserHistory, hashHistory } from 'react-router';
 import './userIndex.less';
@@ -30,12 +31,16 @@ class Main extends Component {
     this.toIntegral = () => {
       this.history.push('/user/integral');
     }
+    this.toMarket = () => {
+      this.props.changePromptContent({ isShow: true, content: '暂时不开放积分商城' });
+    }
   }
 
   render() {
     return(
       <div id="userIndex">
         <TopBar route={{path: 'user'}}></TopBar>
+        { this.props.promptContent.isShow && <Prompt></Prompt> }
         <div className="user-container">
           <div className="account-mes" onClick={this.toAccount}>
             <div className="user-avatar">
@@ -70,7 +75,7 @@ class Main extends Component {
           <Interval></Interval>
           <div className="ele-market">
             <div className="user-order" onClick={this.toOrder}><span></span><span>我的订单</span><span>></span></div>
-            <div className="integral-market"><span></span><span>积分商城</span><span>></span></div>
+            <div className="integral-market" onClick={this.toMarket}><span></span><span>积分商城</span><span>></span></div>
             <div className="ele-member"><span></span><span>饿了么会员卡</span><span>></span></div>
           </div>
           <Interval></Interval>

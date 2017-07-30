@@ -57,3 +57,9 @@ export const integral = (location, cb) => {
     cb(null, require('../Component/user/childComponent/integral/integral').default)
   }, 'integral')
 }
+
+export const memberCard = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/user/childComponent/memberCard/memberCard').default)
+  }, 'memberCard')
+}
