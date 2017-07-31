@@ -51,6 +51,9 @@ const changeTopBarStatus = (path) => {
   else if (path === '/user/exchangeCard') {
     topBar.middle = '兑换会员';
   }
+  else if (path === 'payment') {
+    topBar.middle = '在线支付';
+  }
   return topBar;
 };
 

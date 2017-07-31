@@ -27,6 +27,9 @@ class Main extends Component {
     this.exchangeCard = () => {
       this.history.push('/user/exchangeCard');
     }
+    this.buyVip = () => {
+      this.history.push('/payment');
+    }
   }
 
   render() {
@@ -70,7 +73,7 @@ class Main extends Component {
           </div>
           <div className="open-vip">
             <div className="title">开通会员</div>
-            <div className="buy-vip">
+            <div className="buy-vip" onClick={this.buyVip}>
               一个月<span>¥20</span><div>购买</div>
             </div>
           </div>

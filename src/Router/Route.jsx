@@ -27,6 +27,12 @@ const order = (location, cb) => {
   }, 'order')
 }
 
+const payment = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/payment/payment').default)
+  }, 'payment')
+}
+
 const RouteConfig = (
   <Router history={history}>
     <Route path="/" component={Roots}>
@@ -34,6 +40,7 @@ const RouteConfig = (
       <Route path="takeaway" component={takeaway} />
       <Route path="search" getComponent={search} />
       <Route path="order" getComponent={order} />
+      <Route path="payment" getComponent={payment} />
       <Route path="user" getComponent={user}>
         <IndexRoute getComponent={userIndex} />
         <Route path="/user/account" getComponent={account} />
