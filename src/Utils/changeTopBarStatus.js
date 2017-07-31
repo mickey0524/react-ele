@@ -48,9 +48,12 @@ const changeTopBarStatus = (path) => {
   else if (path === '/user/memberCard') {
     topBar.middle = '会员中心';
   }
+  else if (path === '/user/exchangeCard') {
+    topBar.middle = '兑换会员';
+  }
   return topBar;
-}
+};
 
 export {
   changeTopBarStatus
-}
+};

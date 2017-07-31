@@ -63,3 +63,9 @@ export const memberCard = (location, cb) => {
     cb(null, require('../Component/user/childComponent/memberCard/memberCard').default)
   }, 'memberCard')
 }
+
+export const exchangeCard = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/user/childComponent/exchangeCard/exchangeCard').default)
+  }, 'exchangeCard')
+}

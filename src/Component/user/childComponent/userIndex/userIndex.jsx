@@ -34,6 +34,9 @@ class Main extends Component {
     this.toMarket = () => {
       this.props.changePromptContent({ isShow: true, content: '暂时不开放积分商城' });
     }
+    this.toVip = () => {
+      this.history.push('/user/memberCard');
+    }
   }
 
   render() {
@@ -76,7 +79,7 @@ class Main extends Component {
           <div className="ele-market">
             <div className="user-order" onClick={this.toOrder}><span></span><span>我的订单</span><span>></span></div>
             <div className="integral-market" onClick={this.toMarket}><span></span><span>积分商城</span><span>></span></div>
-            <div className="ele-member"><span></span><span>饿了么会员卡</span><span>></span></div>
+            <div className="ele-member" onClick={this.toVip}><span></span><span>饿了么会员卡</span><span>></span></div>
           </div>
           <Interval></Interval>
           <div className="ele-service">

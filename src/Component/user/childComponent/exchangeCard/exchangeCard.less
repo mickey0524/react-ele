@@ -1,0 +1,72 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #F5F5F5;
+}
+
+#exchangeCard {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1.95rem;
+  .container {
+    .card-desc {
+      line-height: 2rem;
+      padding-left: .7rem;
+      font-size: 0.6rem;
+      color: #666;
+      span {
+        color: #333;
+        font-weight: bold;
+      }
+    }
+    .card-input {
+      input {
+        display: block;
+        width: 100%;
+        line-height: 2rem;
+        padding-left: .7rem;
+        border: 0;
+        outline: 0;
+        border-bottom: 0.025rem solid #E8E8E8;
+        font-size: 0.65rem;
+        color: #999;
+        &:last-of-type {
+          border-bottom: 0;
+        }
+      }
+    }
+    .submit-button {
+      background-color: #ccc;
+      font-size: 0.7rem;
+      color: #fff;
+      text-align: center;
+      line-height: 1.8rem;
+      border-radius: 0.2rem;
+      margin: 0.7rem;
+      font-weight: bold;
+      &.active {
+        background: #4CD964;
+      }
+    }
+    .tips {
+      font-weight: 200;
+      h3 {
+        margin-top: .2rem;
+        text-align: center;
+        font-weight: normal;
+        font-size: 0.65rem;
+        color: #aaa;
+        margin-bottom: .6rem;
+      }
+      p {
+        padding-left: 2rem;
+        font-size: 0.5rem;
+        color: #aaa;
+        line-height: .8rem;
+      }
+    }
+  }
+}
