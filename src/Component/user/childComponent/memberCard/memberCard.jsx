@@ -25,7 +25,7 @@ class Main extends Component {
       <div id="memberCard">
         <TopBar route={this.props.route}></TopBar>
         <div className="container">
-          <div className="feature">为账户<span>{ this.props.userMes.userName }</span></div>
+          <div className="feature">为账户<span>{ this.props.userMes.userName }</span>购买会员</div>
           <div className="card-desc">
             <div className="title">
               <span>会员特权</span>
@@ -45,7 +45,9 @@ class Main extends Component {
                       <div className="item-detail-list">
                       {
                         item.detail.map((detailItem, detailIndex) => {
-                          <p key={detailIndex}>{detailItem}</p>
+                          return(
+                            <p key={detailIndex}>{detailItem}</p>
+                          );
                         })
                       }
                       </div>
@@ -58,6 +60,15 @@ class Main extends Component {
           </div>
           <div className="open-vip">
             <div className="title">开通会员</div>
+            <div className="buy-vip">
+              一个月<span>¥20</span><div>购买</div>
+            </div>
+          </div>
+          <div className="exchange-vip">
+            兑换会员<span>使用卡号卡密 ></span>
+          </div>
+          <div className="buy-record">
+            购买记录<span>开发票 ></span>
           </div>
         </div>
       </div>

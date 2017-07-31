@@ -1,0 +1,131 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #F5F5F5;
+}
+
+#memberCard {
+  .container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1.95rem;
+    .feature {
+      line-height: 2rem;
+      padding-left: 0.7rem;
+      color: #666;
+      font-size: .6rem;
+      span {
+        margin: 0 .1rem;
+        color: #333;
+        font-weight: bold;
+      }
+    }
+    .card-desc {
+      background: #FFF;
+      padding-left: .7rem;
+      .title {
+        line-height: 2rem;
+        border-bottom: 0.025rem solid #E8E8E8;
+        padding-right: .7rem;
+        span:first-of-type {
+          font-size: 0.7rem;
+          color: #333;
+        }
+        span:last-of-type, span:nth-of-type(2) {
+          float: right;
+          color: #3190E8;
+        }
+        >span:last-of-type {
+          width: .6rem;
+          height: .6rem;
+          margin-right: .2rem;
+          position: relative;
+          top: .65rem;
+          background: 0 0 no-repeat;
+          background-size: 100%;
+          background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAvJJREFUSA21Vk1IFVEU/s7MvOd/+U+pkZmEEBXiIgpq06KFYUmLFrZp0S4fFAW1ioi2RU9oFbQJCgoqQYIWEkKQixKK7IfMCnuEYvlSek99M7d77rzRGWfu06Du5s49P98599zzM4QCa3dyumlR2IeFEJ0gbJWiDXnxFATGiGggRuaj4UTNhA6GohjtfVMNcMQlgjghwc0oGY8mjdgCdAsGXRzprUt5dG8PGWjv+95FNt0WEBWe0Fp2As0KUxwf6d3Q75c3/IeO5GQCNj34W3DGUDpSV2H4QJduwJ4zuBQNGPVky+KELVUmZEgw/iOHuQXhsVbs5MAU3d5NlAGOOdnOuyjPK4oIp/aW4+iOEhlm1x/bEbj/OoO+Z3P4vRg25IbLaOM3sZR5+aBR4Ax39VAlOpriGPyYxdNP8zAl8cj2EhzbVYraMgPnBtIrbpAPl8SUjJPkpmLuc1S2dLYV4/LB9XjyIYvzj5eBLBnEuz01aKm20HNnGm8ncyEjnF0xspqNfJ5HpmJ7Y0wp9o9mAgA5Bxj+uqBo2+rcIAQE5IEdZmxDFdFKbv78fiqHh28yGJsOe9i4zvVpJhN+Aw+OsS1VoRqZe6/Y86D3rLxzYwx7NseRzjp4+c29iQca2GX1c0p65R/g6Q4t1Saud1Uq9gX5LrPzGu9cgIbInNeB15cbuNFdhdIYyeyZwfP8O+jkmc4GQv1Dp3BmXwXqy01cGfyFofECoVkGSBncFZfP+q+4fNMDrUWYSOfQP5rVC/o5ElsWJw34abpvLirTIHz5aetEQnTGLlhofg0urjppJCNbw0y24MMqtaVC42Gh+rkfLeK72CK01lpoltW7lsWYjO1mkRwW3KAKKW6q5PSswtn9q48JhSUxGU8Z4K7HwwKQrVazON+HZLMbSa2WPeS4g8edbm7/zYPysHAccU03EzS2fWRyDINOv0jUJz1iwAAT/+vIZAM8iYRptIGMm5wJTCu0lIyUZR1vivnlQzfwM//Fb8sfhhUzHMwI/u8AAAAASUVORK5CYII=");
+        }
+      }
+      .vip-detail-list {
+        margin-bottom: .5rem;
+        .vip-detail-item {
+          padding: .7rem;
+          padding-left: 0;
+          display: flex;
+          border-bottom: 0.025rem solid #E8E8E8;
+          &:last-of-type {
+            border-bottom: 0;
+          }
+          .vip-detail-left {
+            margin-right: .6rem;
+            img {
+              width: 1.6rem;
+              height: 1.8rem;
+            }
+          }
+          .vip-detail-right {
+            h4 {
+              font-size: 0.7rem;
+              color: #333;
+              font-weight: normal;
+            }
+            p {
+              font-size: 0.5rem;
+              color: #999;
+              font-weight: 200;
+            }
+          }
+        }
+      }
+    }
+    .open-vip {
+      background: #FFF;
+      padding-left: .7rem;
+      font-size: 0.7rem;
+      color: #333;
+      .title {
+        line-height: 2rem;
+        border-bottom: 0.025rem solid #E8E8E8;
+      }
+      .buy-vip {
+        span {
+          line-height: 2.6rem;
+          font-size: .6rem;
+          margin-left: .2rem;
+          font-weight: bold;
+          color: #f60;
+        }
+        div {
+          float: right;
+          margin-right: .7rem;
+          border: 0.025rem solid #f60;
+          border-radius: 0.2rem;
+          line-height: 1.2rem;
+          width: 2.6rem;
+          text-align: center;
+          font-size: 0.6rem;
+          color: #f60;
+          position: relative;
+          top: .7rem;
+        }
+      }
+    }
+    .exchange-vip, .buy-record {
+      margin-top: .5rem;
+      background: #FFF;
+      line-height: 2rem;
+      padding-left: .7rem;
+      padding-right: .7rem;
+      font-size: .7rem;
+      color: #333;
+      span {
+        float: right;
+        font-size: 0.6rem;
+        color: #999;
+      }
+    }
+  }
+}
