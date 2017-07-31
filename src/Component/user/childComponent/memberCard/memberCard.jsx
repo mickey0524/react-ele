@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../../../common/template';
 import TopBar from '../../../common/topBar/topBar';
+import QuestionMark from '../../../common/questionMark/questionMark';
 import './memberCard.less';
 
 class Main extends Component {
@@ -17,20 +18,24 @@ class Main extends Component {
         title: '减免配送费',
         detail: [ '每月减免30单，每日可减免3单，每单最高减4元', '蜂鸟配送专享' ]
       }
-    ]
+    ],
+    this.questionMark = () => {
+      this.props.changeQuestionMes({ isShow: true, content: '购卡后31天内，累积享有30单减免配送费服务（每日最多3单，每单最高减免4元）。注：已购买的会员服务不受影响，当前会员服务失效前无法购买新卡。' });
+    }
   }
 
   render() {
     return(
       <div id="memberCard">
         <TopBar route={this.props.route}></TopBar>
+        { this.props.questionMes.isShow && <QuestionMark></QuestionMark> }
         <div className="container">
           <div className="feature">为账户<span>{ this.props.userMes.userName }</span>购买会员</div>
           <div className="card-desc">
             <div className="title">
               <span>会员特权</span>
-              <span>会员说明</span>
-              <span></span>
+              <span onClick={this.questionMark}>会员说明</span>
+              <span onClick={this.questionMark}></span>
             </div>
             <div className="vip-detail-list">
             {
