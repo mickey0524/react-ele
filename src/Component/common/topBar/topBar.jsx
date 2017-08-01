@@ -22,6 +22,10 @@ class Main extends Component {
       const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
       history.goBack(1);
     }
+    this.toUser = () => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('user');
+    }
   }
 
   render() {
@@ -36,7 +40,7 @@ class Main extends Component {
         }
         <span>{ this.props.topBar.middle }</span>
         {
-          this.props.topBar.right && <div className="account-icon"></div>
+          this.props.topBar.right && <div className="account-icon" onClick={this.toUser}></div>
         }
       </div>
     );
