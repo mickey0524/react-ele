@@ -54,6 +54,9 @@ const changeTopBarStatus = (path) => {
   else if (path === 'payment') {
     topBar.middle = '在线支付';
   }
+  else if (path === '/user/buyRecord') {
+    topBar.middle = '购买记录';
+  }
   return topBar;
 };
 
