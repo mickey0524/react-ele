@@ -81,3 +81,9 @@ export const serviceCenter = (location, cb) => {
     cb(null, require('../Component/user/childComponent/serviceCenter/serviceCenter').default)
   }, 'serviceCenter')
 }
+
+export const questionDetail = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/user/childComponent/questionDetail/questionDetail').default)
+  }, 'questionDetail')
+}

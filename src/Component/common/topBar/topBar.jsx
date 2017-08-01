@@ -46,7 +46,7 @@ class Main extends Component {
     let path = this.props.route.path;
     if (path) {
       this.props.changeBottomBar(path);
-      this.props.changeTopBar(changeTopBarStatus(path));
+      this.props.changeTopBar(changeTopBarStatus(path, this.props));
     }
     else {
       this.props.changeBottomBar('takeaway');

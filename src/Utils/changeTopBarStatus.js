@@ -1,4 +1,4 @@
-const changeTopBarStatus = (path) => {
+const changeTopBarStatus = (path, props) => {
   let topBar = {
     left: 'back',
     middle: '',
@@ -59,6 +59,9 @@ const changeTopBarStatus = (path) => {
   }
   else if (path === '/user/serviceCenter') {
     topBar.middle = '服务中心';
+  }
+  else if (path === '/user/questionDetail') {
+    topBar.middle = props.questionDetail.title;
   }
   return topBar;
 };

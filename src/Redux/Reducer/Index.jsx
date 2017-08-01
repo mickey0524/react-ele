@@ -1,6 +1,6 @@
 import {CHANGE_BOTTOM_BAR, CHANGE_TOP_BAR, CHANGE_SHOP_LIST, CHANGE_PROMPT_CONTENT} from '../Action/Index'
 import {ADD_ADDRESS, DEL_ADDRESS, CHANGE_ADDRESS, CHANGE_USER_MES} from '../Action/Index';
-import {CHANGE_QUESTION_MES} from '../Action/Index';
+import {CHANGE_QUESTION_MES, CHANGE_QUESTION_DETAIL} from '../Action/Index';
 
 
 export const bottomChoose = (state = 'takeaway', action = {}) => {
@@ -96,6 +96,16 @@ export const questionMes = (state = { isShow: false, content: '' }, action = {})
   switch(action.type) {
     case CHANGE_QUESTION_MES:
       var newState = Object.assign({}, state, action.questionMes);
+      return newState;
+    default:
+      return state;
+  }
+}
+
+export const questionDetail = (state = { title: '', content: '' }, action = {}) => {
+  switch(action.type) {
+    case CHANGE_QUESTION_DETAIL:
+      var newState = Object.assign({}, state, action.questionDetail);
       return newState;
     default:
       return state;

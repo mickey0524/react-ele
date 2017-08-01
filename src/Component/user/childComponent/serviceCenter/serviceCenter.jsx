@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import template from '../../../common/template';
 import TopBar from '../../../common/topBar/topBar';
 import Prompt from '../../../common/prompt/prompt';
+import { browserHistory, hashHistory } from 'react-router';
 import data from './mockData.json';
 import './serviceCenter.less';
 
@@ -10,6 +11,11 @@ class Main extends Component {
     super(props);
     this.toService = () => {
       this.props.changePromptContent({ isShow: true, content: '请进入真实饿了么app '});
+    }
+    this.toQuestion = (index) => {
+      this.props.changeQuestionDetail({ title: data.questionList[index].name, content: data.questionList[index].content });
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/user/questionDetail');
     }
   }
 
@@ -35,7 +41,7 @@ class Main extends Component {
             {
               data.questionList.map((item, index) => {
                 return (
-                  <li key={index}>
+                  <li key={index} onClick={() => this.toQuestion(index)}>
                     <span>{item.name}</span>
                     <span>></span>
                   </li>
