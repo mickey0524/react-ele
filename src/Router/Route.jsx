@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import { Router, Route, Redirect, IndexRoute, browserHistory, hashHistory } from 'react-router';
 import { shop, shopIndex, ac, shopDetail } from './shop.jsx';
-import { user, userIndex, account, setUserName, address, addAddress, changePassword, balance, giftMoney, integral, memberCard, exchangeCard, buyRecord } from './user.jsx';
+import { user, userIndex, account, setUserName, address, addAddress, changePassword, balance, giftMoney, integral, memberCard, exchangeCard, buyRecord, serviceCenter } from './user.jsx';
 
 import takeaway from '../Component/takeaway/takeaway'; //销售录入
 
@@ -54,6 +54,7 @@ const RouteConfig = (
         <Route path="/user/memberCard" getComponent={memberCard} />
         <Route path="/user/exchangeCard" getComponent={exchangeCard} />
         <Route path="/user/buyRecord" getComponent={buyRecord} />
+        <Route path="/user/serviceCenter" getComponent={serviceCenter} />
       </Route>
       <Route path="shop" getComponent={shop}>
         <IndexRoute getComponent={shopIndex} />

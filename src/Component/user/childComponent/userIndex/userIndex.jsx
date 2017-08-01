@@ -37,6 +37,12 @@ class Main extends Component {
     this.toVip = () => {
       this.history.push('/user/memberCard');
     }
+    this.toService = () => {
+      this.history.push('/user/serviceCenter');
+    }
+    this.downloadApp = () => {
+      this.props.changePromptContent({ isShow: true, content: '请进入真实饿了么App下载' });
+    }
   }
 
   render() {
@@ -83,8 +89,8 @@ class Main extends Component {
           </div>
           <Interval></Interval>
           <div className="ele-service">
-            <div className="service-center"><span></span><span>服务中心</span><span>></span></div>
-            <div className="download-ele"><span></span><span>下载饿了么APP</span><span>></span></div>
+            <div className="service-center" onClick={this.toService}><span></span><span>服务中心</span><span>></span></div>
+            <div className="download-ele" onClick={this.downloadApp}><span></span><span>下载饿了么APP</span><span>></span></div>
           </div>
         </div>
         <BottomBar></BottomBar>

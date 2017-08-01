@@ -75,3 +75,9 @@ export const buyRecord = (locaiton, cb) => {
     cb(null, require('../Component/user/childComponent/buyRecord/buyRecord').default)
   }, 'buyRecord')
 }
+
+export const serviceCenter = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/user/childComponent/serviceCenter/serviceCenter').default)
+  }, 'serviceCenter')
+}

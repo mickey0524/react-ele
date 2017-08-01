@@ -57,6 +57,9 @@ const changeTopBarStatus = (path) => {
   else if (path === '/user/buyRecord') {
     topBar.middle = '购买记录';
   }
+  else if (path === '/user/serviceCenter') {
+    topBar.middle = '服务中心';
+  }
   return topBar;
 };
 
