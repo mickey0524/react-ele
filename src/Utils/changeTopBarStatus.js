@@ -66,6 +66,10 @@ const changeTopBarStatus = (path, props) => {
   else if (path === '/order/orderDetail') {
     topBar.middle = '订单详情';
   }
+  else if (path === '/order/confirmOrder') {
+    topBar.middle = '确认订单';
+    topBar.right = true;
+  }
   return topBar;
 };
 

@@ -1,0 +1,200 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #F5F5F5;
+}
+
+#confirmOrder {
+  .container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1.95rem;
+    background: #FFF;
+    padding-bottom: 2rem;
+    .address-container {
+      display: flex;
+      height: 3.6rem;
+      align-items: center;
+      padding: 0 .6rem;
+      .bg {
+        background: 0 0 no-repeat;
+        background-size: 100%;
+        background-image: url("../../../../images/gps.png");
+        width: .8rem;
+        height: .8rem;
+        margin-right: .4rem;
+      }
+      .address-info {
+        flex: auto;
+        p:first-of-type {
+          font-size: .65rem;
+          span:first-of-type {
+            font-size: .8rem;
+            font-weight: bold;
+            color: #333;
+          }
+        }
+        p:last-of-type {
+          font-size: 0.55rem;
+          color: #777;
+        }
+      }
+      >span:last-of-type {
+        color: #999;
+        font-size: .8rem;
+      }
+    }
+    .delivery-time {
+      display: flex;
+      height: 4rem;
+      align-items: center;
+      border-left: .2rem solid #3190E8;
+      >span {
+        flex: 1;
+        padding-left: 1rem;
+        text-align: left;
+        font-size: 0.8rem;
+        color: #333;
+        font-weight: bold;
+      }
+      .delivery-feature {
+        flex: 1;
+        text-align: right;
+        padding-right: .6rem;
+        p:first-of-type {
+          font-size: 0.7rem;
+          color: #3190e8;
+          margin-bottom: .5rem;
+        }
+        p:last-of-type {
+          color: #FFF;
+          background: #3190E8;
+          border-radius: .1rem;
+          display: inline-block;
+          padding: .1rem .2rem;
+        }
+      }
+    }
+    .pay-container {
+      padding: 0 0.6rem;
+      >div {
+        line-height: 2rem;
+        &:first-of-type {
+          border-bottom: 0.025rem solid #E8E8E8;
+          font-size: 0.7rem;
+          color: #666;
+          span {
+            float: right;
+            font-size: 0.6rem;
+            color: #aaa;
+          }
+        }
+        &:last-of-type {
+          font-size: 0.6rem;
+          color: #aaa;
+          span {
+            float: right;
+          }
+        }
+      }
+    }
+    .order-detail {
+      .order-title {
+        line-height: 2.4rem;
+        border-bottom: 0.025rem solid #E8E8E8;
+        padding-left: .6rem;
+        img {
+          width: 1.2rem;
+          height: 1.2rem;
+          vertical-align: top;
+          position: relative;
+          top: .6rem;
+          margin-right: .4rem;
+        }
+        span {
+          font-size: .8rem;
+          color: #333;
+        }
+      }
+      .order-info {
+        border-bottom: 0.025rem solid #E8E8E8;
+        padding: 0 0.6rem;
+        div {
+          display: flex;
+          height: 2rem;
+          align-items: center;
+          font-size: .65rem;
+          span:first-of-type {
+            color: #666;
+            flex: 3;
+          }
+          span:nth-of-type(2) {
+            color: #f60;
+            flex: 1;
+            text-align: right;
+          }
+          span:last-of-type {
+            flex: 1;
+            text-align: right;
+            color: #666;
+          }
+        }
+      }
+      .order-money {
+        padding: 0 .6rem;
+        display: flex;
+        line-height: 1.4rem;
+        font-size: 0.65rem;
+        .left {
+          color: #666;
+          flex: auto;
+        }
+        .right {
+          margin-right: .7rem;
+          color: #f60;
+        }
+      }
+    }
+    .order-choose {
+      padding: 0 0.6rem;
+      >div {
+        line-height: 2rem;
+        font-size: 0.7rem;
+        color: #666;
+        span {
+          float: right;
+          font-size: 0.6rem;
+          color: #aaa;
+        }
+        &:first-of-type {
+          border-bottom: 0.025rem solid #E8E8E8;
+        }
+      }
+    }
+  }
+  .bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #3C3C3C;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    line-height: 2rem;
+    span:first-of-type {
+      padding-left: .5rem;
+      flex: 5;
+    }
+    span:last-of-type {
+      flex: 2;
+      background-color: #56d176;
+      text-align: center;
+    }
+  }
+}
+
