@@ -28,6 +28,18 @@ const order = (location, cb) => {
   }, 'order')
 }
 
+const orderIndex = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/order/childComponent/orderIndex/orderIndex').default)
+  }, 'orderIndex')
+}
+
+const orderDetail = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/order/childComponent/orderDetail/orderDetail').default)
+  }, 'orderDetail')
+}
+
 const payment = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../Component/payment/payment').default)
@@ -40,7 +52,10 @@ const RouteConfig = (
       <IndexRoute component={takeaway} />//首页
       <Route path="takeaway" component={takeaway} />
       <Route path="search" getComponent={search} />
-      <Route path="order" getComponent={order} />
+      <Route path="order" getComponent={order}>
+        <IndexRoute getComponent={orderIndex} />
+        <Route path="/order/orderDetail" getComponent={orderDetail} />
+      </Route>
       <Route path="payment" getComponent={payment} />
       <Route path="user" getComponent={user}>
         <IndexRoute getComponent={userIndex} />

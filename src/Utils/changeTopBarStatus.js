@@ -63,6 +63,9 @@ const changeTopBarStatus = (path, props) => {
   else if (path === '/user/questionDetail') {
     topBar.middle = props.questionDetail.title;
   }
+  else if (path === '/order/orderDetail') {
+    topBar.middle = '订单详情';
+  }
   return topBar;
 };
 
