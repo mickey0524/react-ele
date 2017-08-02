@@ -36,9 +36,10 @@ class Main extends Component {
         item.classList.remove('active');
       });
       target.classList.add('active');
-      this.goodListScroll(target.textContent);
+      this.goodListScroll(target.textContent.replace(/\d/g, ''));
     }
     this.goodListScroll = (key) => {
+      console.log(key);
       let goodList = this.refs.goods;
       let liList = goodList.children[0].children;
       for (let i = 0; i < liList.length; i++) {
