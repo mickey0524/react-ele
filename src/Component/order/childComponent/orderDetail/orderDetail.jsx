@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import template from '../../../common/template';
 import TopBar from '../../../common/topBar/topBar';
 import Interval from '../../../common/interval/interval';
+import { browserHistory, hashHistory } from 'react-router';
 import './orderDetail.less';
 
 class Main extends Component {
@@ -18,7 +19,11 @@ class Main extends Component {
         number: 1,
         price: 20
       }
-    ]
+    ];
+    this.toShop = () => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('shop');
+    }
   }
 
   render() {
@@ -29,11 +34,11 @@ class Main extends Component {
           <div className="order-title">
             <img src="http://images.cangdu.org/aaa.jpeg" />
             <p>支付超时</p>
-            <span className="order-again">再来一单</span>
+            <span className="order-again" onClick={this.toShop}>再来一单</span>
           </div>
           <Interval></Interval>
           <div className="order-mes">
-            <div className="shop">
+            <div className="shop" onClick={this.toShop}>
               <img src="http://images.cangdu.org/aaa.jpeg" />
               <span>商家名称</span>
               <span>></span>

@@ -5,6 +5,7 @@ import BottomBar from '../../../common/bottomBar/bottomBar';
 import Interval from '../../../common/interval/interval';
 import mockData from './mockData.json';
 import { dateToStamp } from '../../../../Utils/dateForm';
+import { browserHistory, hashHistory } from 'react-router';
 import './orderIndex.less';
 
 class Main extends Component {
@@ -42,6 +43,10 @@ class Main extends Component {
     this.addZero = (num) => {
       return (num < 10) ? '0' + num : num;
     }
+    this.toOrderDetail = () => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/order/orderDetail');
+    }
   }
 
   render() {
@@ -53,7 +58,7 @@ class Main extends Component {
             {
               this.state.orderList.map((item, index) => {
                 return (
-                  <li key={index}>
+                  <li key={index} onClick={this.toOrderDetail}>
                     <div className="order-item">
                       <div className="order-img">
                         <img src={item.shopImg} />
