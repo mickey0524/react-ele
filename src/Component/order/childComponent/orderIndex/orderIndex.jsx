@@ -52,7 +52,7 @@ class Main extends Component {
   render() {
     return (
       <div id="orderIndex">
-        <TopBar route={this.props.route}></TopBar>
+        <TopBar route={{path: 'order'}}></TopBar>
         <div className="order-container">
           <ul>
             {

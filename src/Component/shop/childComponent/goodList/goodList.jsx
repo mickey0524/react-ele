@@ -3,6 +3,7 @@ import template from '../../../common/template';
 import data from './mockData.json';
 import Layzr from 'layzr.js';
 import placeholder from '../../../../images/placeholder-img.png';
+import { browserHistory, hashHistory } from 'react-router';
 import './goodList.less';
 
 class Main extends Component {
@@ -186,6 +187,12 @@ class Main extends Component {
         return `还差¥${money}元起送`;
       }
     }
+    this.goToPay = (ev) => {
+      if (ev.currentTarget.classList.contains('active')) {
+        const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+        history.push('/order/confirmOrder');
+      }
+    }
     this.layzr = () => {
       const layzrInstance = Layzr();
       layzrInstance
@@ -267,7 +274,7 @@ class Main extends Component {
             <p>¥ {this.state.consumption}</p>
             <p>配送费¥{data.deliveryFee}</p>
           </div>
-          <div className="buy-icon" ref="buyIcon">{this.state.payText}</div>
+          <div className="buy-icon" ref="buyIcon" onClick={this.goToPay}>{this.state.payText}</div>
         </div>
         <div className="mask" ref="mask" onClick={this.showShoppingCar}></div>
         <div className="car-detail" ref="carDetail">
