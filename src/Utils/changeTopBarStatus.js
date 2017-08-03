@@ -70,6 +70,9 @@ const changeTopBarStatus = (path, props) => {
     topBar.middle = '确认订单';
     topBar.right = true;
   }
+  else if (path === '/order/orderNote') {
+    topBar.middle = '订单备注';
+  }
   return topBar;
 };
 

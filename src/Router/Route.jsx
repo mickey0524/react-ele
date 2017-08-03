@@ -46,6 +46,12 @@ const confirmOrder = (location, cb) => {
   }, 'confirmOrder')
 }
 
+const orderNote = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('../Component/order/childComponent/orderNote/orderNote').default)
+  }, 'orderNote')
+}
+
 const payment = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../Component/payment/payment').default)
@@ -62,6 +68,7 @@ const RouteConfig = (
         <IndexRoute getComponent={orderIndex} />
         <Route path="/order/orderDetail" getComponent={orderDetail} />
         <Route path="/order/confirmOrder" getComponent={confirmOrder} />
+        <Route path="/order/orderNote" getComponent={orderNote} />
       </Route>
       <Route path="payment" getComponent={payment} />
       <Route path="user" getComponent={user}>

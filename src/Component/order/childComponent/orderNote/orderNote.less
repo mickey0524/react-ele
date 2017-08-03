@@ -1,0 +1,87 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #F5F5F5;
+}
+
+#orderNote {
+  .container {
+    margin-top: .4rem;
+    background: #FFF;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1.95rem;
+    .fast-note {
+      padding: 0 0.6rem;
+      header {
+        font-size: 0.65rem;
+        color: #333;
+        line-height: 2rem;
+      }
+      .fast-note-container {
+        ul {
+          display: inline-block;
+          margin-right: .6rem;
+          margin-bottom: .6rem;
+          li {
+            touch-action: none;
+            &:nth-of-type(n + 2) {
+              border-left: 0;
+            }
+            &:first-of-type {
+              border-top-left-radius: .2rem;
+              border-bottom-left-radius: .2rem;
+            }
+            &:last-of-type {
+              border-top-right-radius: .2rem;
+              border-bottom-right-radius: .2rem;
+            }
+            display: inline-block;
+            font-size: 0.6rem;
+            color: #333;
+            padding: .3rem .6rem;
+            border: 0.025rem solid #3190e8;
+            &.active {
+              background: #3190E8;
+              color: #FFF;
+            }
+          }
+        }
+      }
+    }
+    .other-note {
+      padding: 0 0.6rem .6rem;
+      header {
+        font-size: 0.65rem;
+        color: #333;
+        line-height: 2rem;
+      }
+      textarea {
+        overflow-y: scroll;
+        display: block;
+        resize: none;
+        width: 100%;
+        height: 4.5rem;
+        background-color: #f9f9f9;
+        border: 0.025rem solid #eee;
+        border-radius: .2rem;
+        font-size: 0.6rem;
+        color: #666;
+        padding: .5rem;
+        box-sizing: border-box;
+      }
+    }
+    .submit-button {
+      margin: 0.6rem;
+      background: #4CD964;
+      color: #FFF;
+      font-size: .7rem;
+      line-height: 2rem;
+      text-align: center;
+      border-radius: .2rem;
+    }
+  }
+}

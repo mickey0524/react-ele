@@ -9,6 +9,7 @@ export const CHANGE_ADDRESS = 'CHANGE_ADDRESS';
 export const CHANGE_USER_MES = 'CHANGE_USER_MES';
 export const CHANGE_QUESTION_MES = 'CHANGE_QUESTION_MES';
 export const CHANGE_QUESTION_DETAIL = 'CHANGE_QUESTION_DETAIL';
+export const CHANGE_ORDER_NOTE = 'CHANGE_ORDER_NOTE';
 
 export const changeBottomBar = (bottomChoose) => {
   return {
@@ -77,5 +78,12 @@ export const changeQuestionDetail = (questionDetail) => {
   return {
     type: CHANGE_QUESTION_DETAIL,
     questionDetail
+  }
+}
+
+export const changeOrderNote = (orderNote) => {
+  return {
+    type: CHANGE_ORDER_NOTE,
+    orderNote
   }
 }

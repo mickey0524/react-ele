@@ -41,6 +41,10 @@ class Main extends Component {
         this.setState({ curPayWay: ev.target.textContent.slice(0, -1) });
       }
     }
+    this.toOrderNote = () => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/order/orderNote');
+    }
   }
 
   render() {
@@ -94,8 +98,8 @@ class Main extends Component {
           </div>
           <Interval></Interval>
           <div className="order-choose">
-            <div className="order-remarks">订单备注<span>少点辣 ></span></div>
-            <div className="invoice">发票抬头<span>不需要开发票 ></span></div>
+            <div className="order-remarks" onClick={this.toOrderNote}><span>订单备注</span><span>{this.props.orderNote}</span><span>></span></div>
+            <div className="invoice"><span>发票抬头</span><span>不需要开发票</span><span>></span></div>
           </div>
         </div>
         <div className="pay-way">
