@@ -1,0 +1,21 @@
+.transitionWrapper-enter {
+  opacity: 0.01;
+}
+
+.transitionWrapper-enter.transitionWrapper-enter-active {
+  transition: opacity 300ms ease-in;
+  opacity: 1;
+}
+
+.transitionWrapper-leave {
+  opacity: 1;
+}
+
+.transitionWrapper-leave.transitionWrapper-leave-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+
+.transitionWrapper {
+  position: relative;
+}

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../common/template';
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import './user.less';
 
 class Main extends Component {
@@ -10,7 +11,18 @@ class Main extends Component {
 
   render() {
     return(
-      <div id="user">{ this.props.children }</div>
+      <ReactCSSTransitionGroup
+        transitionName="transitionWrapper"
+        transitionEnterTimeout={300}
+        transitionLeaveTimeout={300}>
+        <div key={this.props.location.pathname}
+             id="user"
+             style={{position:"absolute", width: "100%"}}>
+          {
+            this.props.children
+          }
+        </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }
