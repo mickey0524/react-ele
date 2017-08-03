@@ -17,7 +17,8 @@ class Main extends Component {
       }
     })
     this.state = {
-      curAddress
+      curAddress,
+      curPayWay: '在线支付'
     }
     this.editAddress = () => {
       const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
@@ -37,6 +38,7 @@ class Main extends Component {
           item.classList.remove('active');
         });
         ev.target.classList.add('active');
+        this.setState({ curPayWay: ev.target.textContent.slice(0, -1) });
       }
     }
   }
@@ -65,7 +67,7 @@ class Main extends Component {
           <Interval></Interval>
           <div className="pay-container">
             <div className="pay-way" onClick={this.showPayway}>
-              支付方式<span>在线支付 ></span>
+              支付方式<span>{this.state.curPayWay} ></span>
             </div>
             <div className="gift-money">
               红包<span>暂时只在饿了么 APP 中支持</span>
@@ -101,7 +103,7 @@ class Main extends Component {
           <div className="payway-container" ref="payway" onClick={this.onSectionClick}>
             <header>支付方式</header>
             <section className="active">在线支付<span>✓</span></section>
-            <section>货到付款 (商家不支持货到付款)<span>✓</span></section>
+            <section>货到付款<span>✓</span></section>
           </div>
         </div>
         <div className="bottom-bar">
