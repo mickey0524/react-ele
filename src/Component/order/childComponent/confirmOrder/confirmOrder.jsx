@@ -23,6 +23,22 @@ class Main extends Component {
       const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
       history.push('/user/address');
     }
+    this.showPayway = () => {
+      this.refs.mask.style.display = 'block';
+      this.refs.payway.classList.add('active');
+    }
+    this.onClickMask = () => {
+      this.refs.mask.style.display = 'none';
+      this.refs.payway.classList.remove('active');
+    }
+    this.onSectionClick = (ev) => {
+      if (ev.target.nodeName === 'SECTION') {
+        Array.from(ev.currentTarget.children).forEach((item) => {
+          item.classList.remove('active');
+        });
+        ev.target.classList.add('active');
+      }
+    }
   }
 
   render() {
@@ -48,7 +64,7 @@ class Main extends Component {
           </div>
           <Interval></Interval>
           <div className="pay-container">
-            <div className="pay-way">
+            <div className="pay-way" onClick={this.showPayway}>
               支付方式<span>在线支付 ></span>
             </div>
             <div className="gift-money">
@@ -78,6 +94,14 @@ class Main extends Component {
           <div className="order-choose">
             <div className="order-remarks">订单备注<span>少点辣 ></span></div>
             <div className="invoice">发票抬头<span>不需要开发票 ></span></div>
+          </div>
+        </div>
+        <div className="pay-way">
+          <div className="mask" ref="mask" onClick={this.onClickMask}></div>
+          <div className="payway-container" ref="payway" onClick={this.onSectionClick}>
+            <header>支付方式</header>
+            <section className="active">在线支付<span>✓</span></section>
+            <section>货到付款 (商家不支持货到付款)<span>✓</span></section>
           </div>
         </div>
         <div className="bottom-bar">

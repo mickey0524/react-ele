@@ -175,6 +175,58 @@ body {
       }
     }
   }
+  .pay-way {
+    .mask {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    .payway-container {
+      &.active {
+        transform: translateY(0);
+      }
+      transform: translateY(100%);
+      transition: all .3s ease;
+      background: #FFF;
+      left: 0;
+      right: 0;
+      position: fixed;
+      bottom: 0;
+      z-index: 100;
+      font-size: 0.7rem;
+      padding-bottom: 1rem;
+      header {
+        background: #FAFAFA;
+        line-height: 2rem;
+        text-align: center;
+      }
+      section {
+        line-height: 2rem;
+        padding: 0 .7rem;
+        &.active {
+          span {
+            background: #4CD964;
+          }
+        }
+        span {
+          line-height: 1rem;
+          text-align: center;
+          float: right;
+          width: .8rem;
+          height: .8rem;
+          border-radius: 50%;
+          background: #EEE;
+          color: #FFF;
+          position: relative;
+          top: .6rem;
+        }
+      }
+    }
+  }
   .bottom-bar {
     position: fixed;
     bottom: 0;
