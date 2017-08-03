@@ -27,6 +27,7 @@ class Main extends Component {
     }
 
     this.showActivity = (index, ev) => {
+      ev.stopPropagation();
       let target = ev.currentTarget;
       target.classList.toggle('rotate');
       let newList = this.state.shopList;
