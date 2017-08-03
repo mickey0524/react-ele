@@ -73,6 +73,9 @@ const changeTopBarStatus = (path, props) => {
   else if (path === '/order/orderNote') {
     topBar.middle = '订单备注';
   }
+  else if (path === '/order/orderInvoice') {
+    topBar.middle = '选择发票台头';
+  }
   return topBar;
 };
 

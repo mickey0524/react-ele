@@ -1,6 +1,6 @@
 import {CHANGE_BOTTOM_BAR, CHANGE_TOP_BAR, CHANGE_SHOP_LIST, CHANGE_PROMPT_CONTENT} from '../Action/Index'
 import {ADD_ADDRESS, DEL_ADDRESS, CHANGE_ADDRESS, CHANGE_USER_MES} from '../Action/Index';
-import {CHANGE_QUESTION_MES, CHANGE_QUESTION_DETAIL, CHANGE_ORDER_NOTE} from '../Action/Index';
+import {CHANGE_QUESTION_MES, CHANGE_QUESTION_DETAIL, CHANGE_ORDER_NOTE, CHANGE_ORDER_INVOICE} from '../Action/Index';
 
 
 export const bottomChoose = (state = 'takeaway', action = {}) => {
@@ -116,6 +116,15 @@ export const orderNote = (state = '口味，偏好', action = {}) => {
   switch(action.type) {
     case CHANGE_ORDER_NOTE:
       return action.orderNote;
+    default:
+      return state;
+  }
+}
+
+export const orderInvoice = (state = '不需要开发票', action = {}) => {
+  switch(action.type) {
+    case CHANGE_ORDER_INVOICE:
+      return action.orderInvoice;
     default:
       return state;
   }

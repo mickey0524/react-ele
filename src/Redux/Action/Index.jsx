@@ -10,6 +10,7 @@ export const CHANGE_USER_MES = 'CHANGE_USER_MES';
 export const CHANGE_QUESTION_MES = 'CHANGE_QUESTION_MES';
 export const CHANGE_QUESTION_DETAIL = 'CHANGE_QUESTION_DETAIL';
 export const CHANGE_ORDER_NOTE = 'CHANGE_ORDER_NOTE';
+export const CHANGE_ORDER_INVOICE = 'CHANGE_ORDER_INVOICE';
 
 export const changeBottomBar = (bottomChoose) => {
   return {
@@ -85,5 +86,12 @@ export const changeOrderNote = (orderNote) => {
   return {
     type: CHANGE_ORDER_NOTE,
     orderNote
+  }
+}
+
+export const changeOrderInvoice = (orderInvoice) => {
+  return {
+    type: CHANGE_ORDER_INVOICE,
+    orderInvoice
   }
 }

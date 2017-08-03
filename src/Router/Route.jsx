@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import { Router, Route, Redirect, IndexRoute, browserHistory, hashHistory } from 'react-router';
 import { shop, shopIndex, ac, shopDetail } from './shop.jsx';
+import { order, orderIndex, orderDetail, confirmOrder, orderNote, orderInvoice } from './order.jsx';
 import { user, userIndex, account, setUserName, address, addAddress, changePassword, balance, giftMoney } from './user.jsx';
 import { integral, memberCard, exchangeCard, buyRecord, serviceCenter, questionDetail } from './user.jsx';
 
@@ -22,35 +23,6 @@ const search = (location, cb) => {
   },'search')
 }
 
-const order = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/order/order').default)
-  }, 'order')
-}
-
-const orderIndex = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/order/childComponent/orderIndex/orderIndex').default)
-  }, 'orderIndex')
-}
-
-const orderDetail = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/order/childComponent/orderDetail/orderDetail').default)
-  }, 'orderDetail')
-}
-
-const confirmOrder = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/order/childComponent/confirmOrder/confirmOrder').default)
-  }, 'confirmOrder')
-}
-
-const orderNote = (location, cb) => {
-  require.ensure([], require => {
-    cb(null, require('../Component/order/childComponent/orderNote/orderNote').default)
-  }, 'orderNote')
-}
 
 const payment = (location, cb) => {
   require.ensure([], require => {
@@ -69,6 +41,7 @@ const RouteConfig = (
         <Route path="/order/orderDetail" getComponent={orderDetail} />
         <Route path="/order/confirmOrder" getComponent={confirmOrder} />
         <Route path="/order/orderNote" getComponent={orderNote} />
+        <Route path="/order/orderInvoice" getComponent={orderInvoice} />
       </Route>
       <Route path="payment" getComponent={payment} />
       <Route path="user" getComponent={user}>

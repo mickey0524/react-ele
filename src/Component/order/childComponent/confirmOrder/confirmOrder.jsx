@@ -45,6 +45,14 @@ class Main extends Component {
       const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
       history.push('/order/orderNote');
     }
+    this.toOrderInvoice = () => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/order/orderInvoice');
+    }
+    this.goToPay = () => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('payment');
+    }
   }
 
   render() {
@@ -99,7 +107,7 @@ class Main extends Component {
           <Interval></Interval>
           <div className="order-choose">
             <div className="order-remarks" onClick={this.toOrderNote}><span>订单备注</span><span>{this.props.orderNote}</span><span>></span></div>
-            <div className="invoice"><span>发票抬头</span><span>不需要开发票</span><span>></span></div>
+            <div className="invoice" onClick={this.toOrderInvoice}><span>发票抬头</span><span>{this.props.orderInvoice}</span><span>></span></div>
           </div>
         </div>
         <div className="pay-way">
@@ -112,7 +120,7 @@ class Main extends Component {
         </div>
         <div className="bottom-bar">
           <span>待支付 ¥1869</span>
-          <span>确认下单</span>
+          <span onClick={this.goToPay}>确认下单</span>
         </div>
       </div>
     );
