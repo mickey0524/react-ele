@@ -206,6 +206,14 @@ class Main extends Component {
     this.refs.goods.addEventListener('scroll', () => {
       this.layzr();
     });
+    let data = this.state.data;
+    data.varietyList.forEach((item) => {
+      item.goodList.forEach((goodItem) => {
+        goodItem.orderNum = 0;
+      });
+      item.orderNum = 0;
+    });
+    this.setState({data});
   }
   render() {
     return (

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import template from '../../../common/template';
 import TopBar from '../../../common/topBar/topBar';
 import Interval from '../../../common/interval/interval';
+import { browserHistory, hashHistory } from 'react-router';
 import './confirmOrder.less';
 
 class Main extends Component {
@@ -18,6 +19,10 @@ class Main extends Component {
     this.state = {
       curAddress
     }
+    this.editAddress = () => {
+      const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+      history.push('/user/address');
+    }
   }
 
   render() {
@@ -25,7 +30,7 @@ class Main extends Component {
       <div id="confirmOrder">
         <TopBar route={this.props.route}></TopBar>
         <div className="container">
-          <div className="address-container">
+          <div className="address-container" onClick={this.editAddress}>
             <span className="bg"></span>
             <div className="address-info">
               <p><span>{this.props.userMes.userName}</span> 先生 {this.state.curAddress.phoneNum}</p>
