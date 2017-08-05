@@ -68,7 +68,9 @@ class Main extends Component {
       this.refs.carDetail.classList.toggle('active');
     }
     this.addGood = (index, goodIndex, ev) => {
-      this.animateBall(ev);
+      if (ev) {
+        this.animateBall(ev);
+      }
       let data = this.state.data;
       data.varietyList[index].orderNum += 1;
       data.varietyList[index].goodList[goodIndex].orderNum += 1;
