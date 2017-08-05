@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import template from '../template';
 import { browserHistory, hashHistory } from 'react-router';
-//import IntersectionObserver from '../../Utils/intersection-observer.js';
+import IntersectionObserver from '../../../Utils/intersection-observer.js';
 import mockData from './mock.json';            // mock数据，目前不打算写服务端，只是为了熟悉react
 import placeholder from '../../../images/placeholder-img.png';
-import Layzr from 'layzr.js';
 import './shopList.less';
 
 /**
@@ -42,23 +41,25 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    // let queryLazyLoad = () => {
-    //   return Array.from(document.querySelectorAll('.lazy-load'));
-    // }
-    // let observer = new IntersectionObserver(
-    //   function(changes) {
-    //     changes.forEach(function(change) {
-    //       if (change.intersectionRatio != 0) {
-    //         var img = change.target;
-    //         img.src = img.dataset.img;
-    //         observer.unobserve(img);
-    //       }
-    //     });
-    //   }
-    // );
-    // queryLazyLoad().forEach((item) => {
-    //   observer.observe(item);
-    // });
+    if (!(!this.props.route.path || this.props.route.path === 'takeaway')) {
+      let queryLazyLoad = () => {
+        return Array.from(document.querySelectorAll('.lazy-load'));
+      }
+      let observer = new IntersectionObserver(
+        function(changes) {
+          changes.forEach(function(change) {
+            if (change.intersectionRatio != 0) {
+              var img = change.target;
+              img.src = img.dataset.normal;
+              observer.unobserve(img);
+            }
+          });
+        }
+      );
+      queryLazyLoad().forEach((item) => {
+        observer.observe(item);
+      });
+    }
   }
 
   render () {

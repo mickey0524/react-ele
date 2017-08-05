@@ -146,7 +146,7 @@ class Main extends Component {
           { this.state.isSearch && this.state.isExist && this.state.isClearShow &&
             <div className="suitable-shop">
               <p>商家</p>
-              <ShopList></ShopList>
+              <ShopList route={this.props.route}></ShopList>
             </div>
           }
         </div>
